@@ -8,4 +8,6 @@ class User < ApplicationRecord
   has_many :tags, through: :tag_users
   has_many :skills, through: :skill_users
   has_many :media
+
+  validates :name, presence: true
 end
