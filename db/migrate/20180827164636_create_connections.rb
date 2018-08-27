@@ -3,8 +3,9 @@ class CreateConnections < ActiveRecord::Migration[5.2]
     create_table :connections do |t|
       t.string :status, default: 'pending'
       t.string :request
-      t.bigint :requester_id, index: true
-      t.bigint :responder_id, index: true
+      t.references :requester, foreign_key: { to_table: :users }
+      t.references :responder, foreign_key: { to_table: :users }
+
 
       t.timestamps
     end

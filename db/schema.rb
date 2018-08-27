@@ -99,8 +99,12 @@ ActiveRecord::Schema.define(version: 2018_08_27_165029) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "connections", "users", column: "requester_id"
+  add_foreign_key "connections", "users", column: "responder_id"
   add_foreign_key "media", "users"
   add_foreign_key "messages", "connections"
+  add_foreign_key "messages", "users", column: "receiver_id"
+  add_foreign_key "messages", "users", column: "sender_id"
   add_foreign_key "skill_users", "skills"
   add_foreign_key "skill_users", "users"
   add_foreign_key "tag_skills", "skills"
