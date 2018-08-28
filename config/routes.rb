@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
-  get 'users/index'
-  get 'users/show'
-  get 'users/edit'
-  get 'users/update'
   devise_for :users
-  root to: 'pages#home'
+  resources :users, except: %i[new create]
+  get 'getting_started', to: 'users#getting_started', as: 'getting_started'
   get 'profile', to: 'pages#profile', as: 'profile'
-  resources :users
+
+  root to: 'pages#home'
 end
