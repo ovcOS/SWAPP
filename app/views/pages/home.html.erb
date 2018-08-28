@@ -1,2 +1,56 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home_banner" style="background-image: linear-gradient(150deg, #3023AE 0%, #C86DD7 100%), url('');">
+  <div class="container text-center">
+    <div class="row ">
+      <div class="col-xs-12">
+        <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+          <div class="home">
+            <p class="home__logo">LOGO</p>
+            <!-- Bottom Carousel Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
+              <li data-target="#quote-carousel" data-slide-to="1"></li>
+              <li data-target="#quote-carousel" data-slide-to="2"></li>
+              <li data-target="#quote-carousel" data-slide-to="3"></li>
+            </ol>
+            <!-- Carousel Slides / Quotes -->
+            <div class="carousel-inner">
+              <!-- Welcome-->
+              <div class="item active">
+                <% title = 'WELCOME' %>
+                <% paragraph = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' %>
+                <%=  render "quote", locals: {title: title, paragraph: paragraph} %>
+              </div>
+              <!-- Quote 1 -->
+              <div class="item">
+                <% title = 'CONNECT' %>
+                <% paragraph = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' %>
+                <%=  render "quote", locals: {title: title, paragraph: paragraph} %>
+              </div>
+              <!-- Quote 2 -->
+              <div class="item">
+                <% title = 'SHARE' %>
+                <% paragraph = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' %>
+                <%=  render "quote", locals: {title: title, paragraph: paragraph} %>
+              </div>
+              <!-- Quote 3 -->
+              <div class="item">
+                <% title = 'LEARN' %>
+                <% paragraph = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' %>
+                <%=  render "quote", locals: {title: title, paragraph: paragraph} %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <form action="<%= new_user_registration_path %>">
+          <button class="button button__top">Sign Up</button>
+        </form>
+        <form action="<%= user_session_path %>">
+          <button class="button">Sign In</button>
+        </form>
+        <p class="home__terms">By entering I accept terms & conditions</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+

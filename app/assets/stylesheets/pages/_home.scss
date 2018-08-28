@@ -1,1 +1,34 @@
 // Specific CSS for your home-page
+.home {
+  color: white;
+}
+
+.home__logo {
+  padding: 130px 0px;
+}
+
+.home__header {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.home__paragraph {
+  font-weight: lighter;
+  font-size: 12px;
+}
+
+.home__terms {
+  font-weight: lighter;
+  font-size: 8px;
+  margin-top: 27px;
+  color: white;
+}
+
+.button__top {
+  margin-top: 53px;
+  margin-bottom: 10px;
+}
+
+.container {
+  max-width: 300px;
+}
