@@ -4,3 +4,6 @@ import "bootstrap";
 import "awesomplete/awesomplete.css"
 // Awesomplete JS
 import "awesomplete"
+
+import {carousel} from "../components/carousel.js";
+carousel()

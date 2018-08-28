@@ -1,0 +1,35 @@
+.profile-banner {
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-pic {
+  object-fit: cover;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid white;
+  margin-top: 25px;
+
+}
+
+.profile-banner__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+
+  h3 {
+    margin-top: 5px;
+    font-size: 24px;
+  }
+
+  p {
+    font-weight: 100;
+    font-size: 12px;
+  }
+
+}
