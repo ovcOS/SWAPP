@@ -1,10 +1,5 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
+require 'json'
 
 tags = {
           name: %w(music performing_arts visual_arts fitness_wellness languages sports extreme_sports handwork DIY fashion technology house_care animal_care gardening science engineering humanities)
@@ -14,20 +9,6 @@ tags = {
 tags[:name].each do |tag|
   Tag.create(name: tag)
 end
-
-
-skills.each do |tag_name, skill_names|
-  skill_names.each do |skill_name|
-    if Skill.where(name: skill_name).first
-      skill = Skill.where(name: skill_name).first
-    else
-      skill = Skill.create(name: skill_name)
-    end
-    tag = Tag.where(name: tag_name)
-    skill.tags << tag
-  end
-end
-
 
 skills = {
           music: %w(singing guitar bass drums violin cello harmonica harp banjo ukelele piano percussion saxophone trumpet trombone flute clarinet tres lute mandolin recording staging music-theory DJing accordion rapping),
@@ -46,3 +27,18 @@ skills = {
 
          }
 
+# associate tag to skills
+skills.each do |tag_name, skill_names|
+  skill_names.each do |skill_name|
+    if Skill.where(name: skill_name).first
+      skill = Skill.where(name: skill_name).first
+    else
+      skill = Skill.create(name: skill_name)
+    end
+    tag = Tag.where(name: tag_name)
+    skill.tags << tag
+  end
+end
+
+
+# generate users
