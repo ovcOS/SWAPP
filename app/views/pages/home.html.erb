@@ -1,9 +1,4 @@
-
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" type="text/css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js" type="text/javascript"></script>
-
-<div class="banner" style="background-image: linear-gradient(150deg, #3023AE 0%, #C86DD7 100%), url('');">
+<div class="home_banner" style="background-image: linear-gradient(150deg, #3023AE 0%, #C86DD7 100%), url('');">
   <div class="container text-center">
     <div class="row ">
       <div class="col-xs-12">
@@ -21,48 +16,36 @@
             <div class="carousel-inner">
               <!-- Welcome-->
               <div class="item active">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <h1 class="home__header">WELCOME</h1>
-                    <p class="home__paragraph">&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&rdquo;</p>
-                  </div>
-                </div>
+                <% title = 'WELCOME' %>
+                <% paragraph = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' %>
+                <%=  render "quote", locals: {title: title, paragraph: paragraph} %>
               </div>
               <!-- Quote 1 -->
               <div class="item">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <h1 class="home__header">CONNECT</h1>
-                    <p class="home__paragraph">&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&rdquo;</p>
-                  </div>
-                </div>
+                <% title = 'CONNECT' %>
+                <% paragraph = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' %>
+                <%=  render "quote", locals: {title: title, paragraph: paragraph} %>
               </div>
               <!-- Quote 2 -->
               <div class="item">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <h1 class="home__header">SHARE</h1>
-                    <p class="home__paragraph">&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&rdquo;</p>
-                  </div>
-                </div>
+                <% title = 'SHARE' %>
+                <% paragraph = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' %>
+                <%=  render "quote", locals: {title: title, paragraph: paragraph} %>
               </div>
               <!-- Quote 3 -->
               <div class="item">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <h1 class="home__header">LEARN</h1>
-                    <p class="home__paragraph">&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&rdquo;</p>
-                  </div>
-                </div>
+                <% title = 'LEARN' %>
+                <% paragraph = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' %>
+                <%=  render "quote", locals: {title: title, paragraph: paragraph} %>
               </div>
             </div>
           </div>
         </div>
          <form action="<%= new_user_registration_path %>">
-          <button class="btn-home home__button__top">Sign Up</button>
+          <button class="button button__top">Sign Up</button>
         </form>
          <form action="<%= user_session_path %>">
-          <button class="btn-home">Sign In</button>
+          <button class="button">Sign In</button>
         </form>
         <p class="home__terms">By entering I accept terms & conditions</p>
       </div>
