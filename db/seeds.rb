@@ -1,6 +1,6 @@
 require 'open-uri'
-require 'json'
 
+puts "Seeding tags"
 tags = {
           name: %w(music performing_arts visual_arts fitness_wellness languages sports extreme_sports handwork DIY fashion technology house_care animal_care gardening science engineering humanities)
       }
@@ -10,6 +10,7 @@ tags[:name].each do |tag|
   Tag.create(name: tag)
 end
 
+puts "Seeding skills"
 skills = {
           music: %w(singing guitar bass drums violin cello harmonica harp banjo ukelele piano percussion saxophone trumpet trombone flute clarinet tres lute mandolin recording staging music-theory DJing accordion rapping),
 
@@ -40,5 +41,24 @@ skills.each do |tag_name, skill_names|
   end
 end
 
+# generate random character password
+password = (0..5).map { (65 + rand(26)).chr }.join
+
+puts "Seeding users"
 
 # generate users
+100.times  {
+  url = "https://randomuser.me/api/?inc=name,\%20picture,\%20email"
+  user_api = open(url).read
+  api_fields = JSON.parse(user_api)
+  name = api_fields["results"][0]["name"]["first"] + " " + api_fields["results"][0]["name"]["last"]
+  email = api_fields["results"][0]["email"]
+  picture = api_fields["results"][0]["picture"]["large"]
+  location = 'Barcelona, Spain'
+  new_user = User.create(name: name, email: email, password: password, location: location, profile_photo: picture)
+  rand(1..3).times { new_user.skills << Skill.all.sample }
+}
+
+puts "Ready to rumble!"
+
+
