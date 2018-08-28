@@ -29,8 +29,8 @@ class UsersController < ApplicationController
   end
 
   def getting_started
-    @skill_names = Skill.all.map{ |skill| skill.name }
-    @tag_names = Tag.all.map{ |tag| tag.name }
+    @skill_names = Skill.all.map{ |skill| skill.name.gsub('_', ' ').titlecase }.join(',')
+    @tag_names = Tag.all.map{ |tag| tag.name.gsub('_', ' ').titlecase }.join(',')
   end
 
   private
