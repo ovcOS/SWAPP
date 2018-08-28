@@ -1,0 +1,23 @@
+#form {
+  text-align: center;
+}
+
+.form-control {
+  background: none;
+  display: inline-block;
+  border: none;
+  border-bottom: 1px solid gray;
+  box-shadow: none;
+  padding-left: 50px;
+
+}
+
+.form__wrap-input {
+  position: relative;
+}
+
+.form__icon {
+  position: absolute;
+  top: 40px;
+  left: 10px;
+}
