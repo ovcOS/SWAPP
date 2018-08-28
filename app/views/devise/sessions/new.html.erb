@@ -2,22 +2,22 @@
   <div class="row">
     <div class="col-xs-12">
       <div id="form">
-        <h1>SWAPP</h1>
+        <div class="form__brand">
+          <h1>SWAPP</h1>
+        </div>
 
-        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%= minimal_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-inputs">
               <div class="form__wrap-input">
                 <%= f.input :email,
-                            label: "",
                             required: true,
                             autofocus: true,
                             input_html: { autocomplete: "email" },
                             placeholder: "Email" %>
-                            <span class="fas fa-user form__icon"></span>
+                            <span class="fas fa-envelope form__icon"></span>
               </div>
               <div class="form__wrap-input">
                 <%= f.input :password,
-                            label: "",
                             required: true,
                             input_html: { autocomplete: "current-password",
                             placeholder: "Password" } %>
