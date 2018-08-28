@@ -1,0 +1,20 @@
+.button {
+  text-decoration: none;
+  color: $rich-lilac;
+  background-color: white;
+  width: 231px;
+  height: 30px;
+  border-radius: 50px;
+  font-weight: lighter;
+  font-size: 13px;
+  opacity: 0.95;
+  box-shadow: 0px 10px 32px;
+  border: 0px;
+}
+
+.button:hover {
+ text-decoration: none;
+ opacity: 1;
+ color: $rich-lilac;
+}
+
