@@ -56,7 +56,12 @@ puts "Seeding users"
   picture = api_fields["results"][0]["picture"]["large"]
   location = 'Barcelona, Spain'
   new_user = User.create(name: name, email: email, password: password, location: location, profile_photo: picture)
-  rand(1..3).times { new_user.skills << Skill.all.sample }
+   rand(1..3).times do
+    skill = Skill.all.sample
+    unless new_user.skills.include? skill
+      new_user.skills << skill
+    end
+  end
 }
 
 puts "Ready to rumble!"
