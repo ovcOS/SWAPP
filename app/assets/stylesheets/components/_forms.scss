@@ -3,18 +3,20 @@
 }
 
 .form__brand {
-  margin-top: 50px;
-  margin-bottom: 150px;
+  margin-top: 110px;
+  margin-bottom: 190px;
 }
 
-// this is a bootstrap class
+// overriding bootstrap class
 .form-control {
   background: none;
-  display: inline-block;
-  border: none;
-  border-bottom: 1px solid gray;
-  box-shadow: none;
-  padding-left: 50px;
+  border-bottom: 1px solid gray !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  box-shadow: none !important;
+  border-radius: 0px !important;
+  padding: 6px 37px !important;
 }
 
 .form__wrap-input {
@@ -27,3 +29,18 @@
   top: 10px;
   left: 10px;
 }
+
+.form__remember{
+  display: flex;
+  justify-content: center;
+
+}
+
+.form__links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 130px;
+  margin-top: 30px;
+}
+
