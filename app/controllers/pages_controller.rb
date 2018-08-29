@@ -7,4 +7,7 @@ class PagesController < ApplicationController
   def profile
     @user = current_user
   end
+
+  def getting_started
+  end
 end
