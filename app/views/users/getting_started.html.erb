@@ -1,0 +1,28 @@
+<div class="home_banner" style="background-image: linear-gradient(150deg, #3023AE 0%, #C86DD7 100%), url('');">
+  <div class="get_started_container container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="header">
+          <h1>Getting Started</h1>
+          <p>Just a few more things;</p>
+        </div>
+        <div class="additional_info_form">
+          <%= form_for @user do |f| %>
+
+            <div class="input_cont">
+              <%= f.label :skills, 'Skills:' %>
+              <%= f.awesomplete_field(:skills, collection: @skill_names.join(','), placeholder:"ex: xxx, yyy, zzz") %>
+            </div>
+
+            <div class="input_cont">
+              <%= f.label :intrests, 'Intrests:' %>
+              <%= f.awesomplete_field(:tags, collection: @tag_names.join(','), placeholder:"ex: xxx, yyy, zzz") %>
+            </div>
+
+           <div class="info_form_button"> <%= f.submit "Continue", class:'button' %></div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
