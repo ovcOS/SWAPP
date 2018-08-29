@@ -1,23 +1,72 @@
 .get_started_container{
   color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 
   h1 {
     font-size: $h1;
     font-weight: $bold;
+    padding-bottom: 5px;
   }
 
   p {
     font-size: $p;
-    font-weight: $normal;
+    font-weight: $light;
   }
 
+  label {
+    font-size: $p;
+    font-weight: $bold;
+  }
 
+  .header {
+    padding-top: 88px;
+    padding-bottom: 35px;
+  }
 
+  .additional_info_form {
+    text-align: left;
+  }
 
+  .input_cont {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
 
+    label {
+      margin-right: 5px;
+    }
 
+    input {
+      background: none;
+      font-size: $p;
+      font-weight: $light;
+      border: 0px;
+      &:first-child {
+        margin-bottom: 20px;
+      }
+      &::placeholder {
+        color: white;
+        font-size: $p;
+        font-weight: lighter;
+        opacity: 0.5;
+      }
+    }
 
+    ul > li {
+      color: black;
+    }
 
+    .awesomplete {
+      flex: 1;
+      width: 100%;
+    }
+  }
+
+  .info_form_button {
+    padding-top: 37px;
+  }
 
 
 
