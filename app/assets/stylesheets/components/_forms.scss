@@ -2,22 +2,29 @@
   text-align: center;
   color: white;
 
-  & > a {
+  h2 {
+    font-weight:lighter;
+    font-size: $h2;
+  }
+
+  p {
+    font-weight: $light;
+    font-size: $p;
+  }
+
+  a {
     color: white;
     text-decoration: none;
-    font-weight: lighter;
+    font-weight: $light;
+    font-size: $p;
     line-height: 2.0;
     &:hover {
-    font-weight: normal;
+    font-weight: $normal;
     }
   }
 
-  & label {
-    font-weight: 350;
-  }
-
-  & p {
-    font-weight: lighter;
+  label {
+    font-weight: $light;
   }
 }
 
