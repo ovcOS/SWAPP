@@ -28,6 +28,16 @@ class User < ApplicationRecord
     for_ids_with_order(ids)
   end
 
+  def skill_names
+    skills = self.skills.order("RANDOM()").limit(3)
+    skills.map { |skill| skill.name.titleize }.join(', ').strip
+  end
+
+  def tag_names
+    tags = self.tags.order("RANDOM()").limit(3)
+    tags.map { |tag| tag.name.titleize }.join(', ').strip
+  end
+
   private
 
   def add_to_tag_users(skill)

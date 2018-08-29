@@ -1,2 +1,26 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <% @users.each do |user| %>
+        <%= link_to user_path(user) do %>
+
+          <div id="card">
+            <div class="card__profile">
+              <%= image_tag(user.profile_photo, class: "card__profile-photo") %>
+              <div class="card__profile-info">
+                <h4><%= user.name.titleize %></h4>
+                <p><%= user.location %></p>
+              </div>
+            </div>
+
+            <div class="card__skills">
+              <p><strong>Skills</strong>: <%= user.skill_names %></p>
+              <p><strong>Interested in</strong>: <%= user.tag_names %></p>
+            </div>
+          </div>
+
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
