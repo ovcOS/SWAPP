@@ -1,22 +1,22 @@
-.navbar-inverse  {
+.global-nav  {
   box-shadow: 0px 2px 4px rgba(50, 50, 50, 0.75);
   height: 10vh;
-  background-color: white;
+
 }
 
-.navbar__nav {
+.global-nav__nav {
   display: flex;
   align-items: center;
   height: 71.5px;
 }
-.navbar__links {
+.global-nav__links {
   width: 720px;
   display: flex;
   justify-content: space-around;
 
 }
 
-.navbar__element {
+.global-nav__element {
   width: 30px;
   height: 30px;
   img {
@@ -24,3 +24,4 @@
     height: 23px;
   }
 }
+
