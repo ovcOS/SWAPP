@@ -1,43 +1,45 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <div id="form">
-        <div class="form__brand">
-          <h1>SWAPP</h1>
-        </div>
-
-        <%= minimal_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <div class="form-inputs">
-              <div class="form__wrap-input">
-                <%= f.input :email,
-                            required: true,
-                            autofocus: true,
-                            input_html: { autocomplete: "email" },
-                            placeholder: "Email" %>
-                            <span class="fas fa-envelope form__icon"></span>
-              </div>
-              <div class="form__wrap-input">
-                <%= f.input :password,
-                            required: true,
-                            input_html: { autocomplete: "current-password",
-                            placeholder: "Password" } %>
-                            <span class="fas fa-lock form__icon"></span>
-                            </div>
-
-              <div class="form__remember"><%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %></div>
-          </div>
-
-          <div class="form__links">
-            <div class="form-actions">
-              <%= f.button :submit, "Sign in" %>
+<div class= form__background>
+  <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div id="form">
+            <div class="form__brand">
+              <h1>SWAPP</h1>
             </div>
-        <% end %>
 
-          <div>
-            <%= render "devise/shared/links" %>
+            <%= minimal_form_for(resource, as: resource_name, url: session_path(resource_name), :defaults => { :input_html => { :class => "form__input" } }) do |f| %>
+              <div class="form-inputs">
+                  <div class="form__wrap-input">
+                    <%= f.input :email,
+                                required: true,
+                                autofocus: true,
+                                input_html: { autocomplete: "email" },
+                                placeholder: "Email" %>
+                                <span class="fas fa-envelope form__icon"></span>
+                  </div>
+                  <div class="form__wrap-input">
+                    <%= f.input :password,
+                                required: true,
+                                input_html: { autocomplete: "current-password",
+                                placeholder: "Password" } %>
+                                <span class="fas fa-lock form__icon"></span>
+                                </div>
+
+                  <div class="form__remember"><%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %></div>
+              </div>
+
+              <div class="form__links">
+                <div class="form-actions">
+                  <%= f.button :submit, "Sign in" %>
+                </div>
+            <% end %>
+
+              <div>
+                <%= render "devise/shared/links" %>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
   </div>
 </div>
