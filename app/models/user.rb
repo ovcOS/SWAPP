@@ -13,20 +13,35 @@ class User < ApplicationRecord
 
   validates :name, presence: true
 
+  scope :for_ids_with_order, ->(ids) {
+    order = sanitize_sql_array(
+      ["position((',' || id::text || ',') in ?)", ids.join(',') + ',']
+    )
+    where(id: ids).order(order)
+  }
+
+  def self.best_matches(user, limit: false)
+    ids = joins(:tags).where(tags: { name: user.tags.pluck(:name)})
+                      .group(:id)
+                      .count.sort_by{|i,c| c}
+                      .reverse.map(&:first) - [user.id]
+    for_ids_with_order(ids)
+  end
+
   private
 
   def add_to_tag_users(skill)
     skill.tags.each do |tag|
-      self.tags << tag
+      unless self.tags.include? tag
+        self.tags << tag
+      end
     end
   end
 
-  def remove_from_tag_users(skill)
-    user_tags = self.tags.to_a
-    skill.tags.each do |tag|
-      user_tags.delete_at(user_tags.index(tag) || user_tags.length)
+  def remove_from_tag_users
+    self.tags = []
+    self.skills.each do |skill|
+      add_to_tag_users(skill)
     end
-    self.tags.clear
-    self.tags << user_tags
   end
 end
