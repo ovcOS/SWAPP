@@ -22,7 +22,7 @@ skills = {
 
          languages: %w(pronounciation public-speaking reading writing grammar spelling catalan mandarin spanish english hindi arabic portuguese bengali russian japanese punjabi german javanese malay korean telugu vietnamese french marathi tamil urdu turkish italian cantonese thai gujarati jin persian polish pashto kannada malayalam sudanese xiang hausa burmese ukranian filipino yoruba romanian greek swedish norwegian finnish danish slovak latvian belarusian czech hungarian),
 
-         sports: %w(gymnastics cheerleading dancing gliding sky-diving base-jumping archery badminton football american-football rugby padel ping-pong tennis beach-tennis volleyball beach-volleyball basketball baseball softball cricket skateboarding scootering snowboarding skiing surfing windsurfing wakesurfing bodyboarding kitesurfing climbing hiking cycling BXM wrestling boxing martial-arts airsoft laser-tag paintball billiards equine-sports fishing flying-disc-sports golf handball hockey basque-pelota running sailing free-running parkour hiking canoeing kayaking rafting rowing scuba-diving cliff-diving weight-lifting calisthenics auto-racing karting motorcycle-racing chess lacrosse),
+         sports: %w(gymnastics cheerleading dancing gliding sky-diving base-jumping archery badminton football american-football rugby padel ping-pong tennis beach-tennis volleyball beach-volleyball basketball baseball softball cricket skateboarding scootering snowboarding skiing surfing windsurfing wakesurfing bodyboarding kitesurfing climbing hiking cycling BXM wrestling boxing martial-arts airsoft laser-tag paintball billiards equine-sports fishing flying-disc-sports golf handball hockey basque-pelota running sailing free-running parkour canoeing kayaking rafting rowing scuba-diving cliff-diving weight-lifting calisthenics auto-racing karting motorcycle-racing chess lacrosse),
 
          extreme_sports: %w(gliding sky-diving base-jumping snowboarding skiing frestyle-skiing high-mountain-skiing surfing windsurfing wakesurfing kitesurfing climbing parkour rafting cliff-diving auto-racing motorcycle-racing),
 
@@ -56,7 +56,12 @@ puts "Seeding users"
   picture = api_fields["results"][0]["picture"]["large"]
   location = 'Barcelona, Spain'
   new_user = User.create(name: name, email: email, password: password, location: location, profile_photo: picture)
-  rand(1..3).times { new_user.skills << Skill.all.sample }
+   rand(1..3).times do
+    skill = Skill.all.sample
+    unless new_user.skills.include? skill
+      new_user.skills << skill
+    end
+  end
 }
 
 puts "Ready to rumble!"

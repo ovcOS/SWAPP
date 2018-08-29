@@ -4,22 +4,22 @@
 }
 
 .home__logo {
-  padding: 130px 0px;
+  padding: 85px 0px;
 }
 
 .home__header {
-  font-weight: bold;
-  font-size: 20px;
+  font-weight: $bold;
+  font-size: $h1;
 }
 
 .home__paragraph {
-  font-weight: lighter;
-  font-size: 12px;
+  font-weight: $normal;
+  font-size: $p;
 }
 
 .home__terms {
-  font-weight: lighter;
-  font-size: 8px;
+  font-weight: $light;
+  font-size: $h5;
   margin-top: 27px;
   color: white;
 }
@@ -29,6 +29,4 @@
   margin-bottom: 10px;
 }
 
-.container {
-  max-width: 300px;
-}
+
