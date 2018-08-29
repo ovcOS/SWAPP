@@ -3,9 +3,10 @@
 }
 
 .profile-content {
-  h4 {
+  min-height: 260px;
+  h3 {
     color: $ocean-blue;
-    font-size: $h4;
+    font-size: $h3;
   }
   p {
     font-size: $p;

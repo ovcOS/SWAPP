@@ -3,18 +3,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  object-fit: center;
-}
-
-.profile-pic {
-  object-fit: cover;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 2px solid white;
-  margin-top: 25px;
+  background-size: cover;
 
 }
+
 
 .profile-banner__content {
   display: flex;
@@ -23,14 +15,14 @@
   flex-direction: column;
   color: white;
 
-  h3 {
-    margin-top: 5px;
-    font-size: 24px;
+  h2 {
+    margin-top: 0px;
+    font-size: $h2;
   }
 
   p {
-    font-weight: 100;
-    font-size: 12px;
+    font-weight: $light;
+    font-size: $p;
   }
 
 }

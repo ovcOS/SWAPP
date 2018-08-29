@@ -1,0 +1,24 @@
+a.button {
+  display:inline-block;
+  width:100px;
+  height:50px;
+  color:#fff;
+  line-height:50px;
+  text-align:center;
+  text-decoration: none;
+}
+
+.content {
+  margin-top:30px;
+}
+
+div[class*="content-"] {
+  display:none;
+}
+
+div.active {
+  display:block;
+}
+
+
+

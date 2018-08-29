@@ -1,11 +1,19 @@
-<div class="profile-banner" style="background-image: linear-gradient(150deg, rgba(48, 35, 174, .8) 0%, rgba(200, 109, 115, .9) 100%), url(<%= @user.profile_photo %>);  ">
+<div class="profile-banner" style="background-image: linear-gradient(150deg, rgba(48, 35, 174, .8) 0%, rgba(200, 109, 115, .9) 100%), url(<%= @user.profile_photo %>);   ">
   <div class="container">
     <div class='row'>
       <div class='col-xs-12 col-md-12'>
         <div class='profile-banner__content'>
           <%= image_tag @user.profile_photo, class: 'avatar'  %></p>
-          <h3><%= @user.name.capitalize %></h3>
+          <h2><%= @user.name.capitalize %></h2>
           <p><%= @user.email %></p>
+          <div class="tabs">
+            <a href="#" class="button">
+              Info
+            </a>
+            <a href="#" class="button">
+              Media
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -14,15 +22,36 @@
 <div class='container'>
   <div class='row'>
     <div class='col-xs-12'>
-      <div class='profile-content'>
-        <h4>About <%= @user.name %> </h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <h4>Skills</h4>
-        <h4>Interests</h4>
+      <div class="content">
+        <div class='content-1 active' id="info">
+          <h3>About <%= @user.name %> <button id="btn-update-about">Update</button></h3>
+          <p class="description" value="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+          </p>
+          <div class="form-update">
+            <%= simple_form_for @user do |f| %>
+              <%= f.input :location %>
+              <%= f.button :submit, 'Submit' %>
+            <% end %>
+          </div>
+          </div>
+          <h3>Skills</h3>
+          <ul>
+
+            <li></li>
+          </ul>
+          <h3>Interests</h3>
+        </div>
+        <div class='content-2' id="media">
+          <p>No media to display</p>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+
 <div class='btn-container'>
   <button class='btn-profile'>Chat with <%= @user.name.capitalize %></button>
 </div>
