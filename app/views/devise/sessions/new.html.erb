@@ -5,6 +5,7 @@
         <div id="form">
           <div class="form__brand">
             <h1>SWAPP</h1>
+            <p>Welcome Back!</p>
           </div>
 
           <%= minimal_form_for(resource, as: resource_name, url: session_path(resource_name), :defaults => { :input_html => { :class => "form__input" } }) do |f| %>
@@ -31,7 +32,7 @@
 
             <div class="form__links">
               <div class="form-actions">
-                <%= f.button :submit, "Sign in", class: "button" %>
+                <%= f.button :submit, "Log in", class: "button" %>
               </div>
             </div>
           <% end %>
