@@ -1,13 +1,21 @@
 <div class="home_banner" style="background-image: linear-gradient(150deg, #3023AE 0%, #C86DD7 100%), url('');">
+  <div class="get_started_container">
+    <h1>Getting Started</h1>
+    <p>Just a few more things; What skills are you willing to teach and what are some of your interests?</p>
+    <%= form_for @user do |f| %>
+      <%= f.label :name %>:
+      <%= f.text_field :name %> <br>
 
 
+      <%= f.label :skills %>:
+      <%= f.awesomplete_field(:skills, collection: @skill_names) %> <br>
 
+      <%= f.label :tags %>:
+      <%= f.awesomplete_field(:tags, collection: @tag_names) %> <br>
 
-
-
-
-
-
+      <%= f.submit %>
+    <% end %>
+  </div>
 </div>
 
 
@@ -31,5 +39,5 @@
 
 
 <!--
-<input class="awesomplete" data-list="<%= @tag_names %>"  data-multiple/>
+
  -->
