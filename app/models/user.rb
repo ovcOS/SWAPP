@@ -20,12 +20,12 @@ class User < ApplicationRecord
     where(id: ids).order(order)
   }
 
-  def self.best_matches(user, limit: false)
-    ids = joins(:tags).where(tags: { name: user.tags.pluck(:name)})
+  def best_matches
+    ids = User.joins(:tags).where(tags: { name: self.tags.pluck(:name)})
                       .group(:id)
                       .count.sort_by{|i,c| c}
-                      .reverse.map(&:first) - [user.id]
-    for_ids_with_order(ids)
+                      .reverse.map(&:first) - [self.id]
+    User.for_ids_with_order(ids)
   end
 
   private
