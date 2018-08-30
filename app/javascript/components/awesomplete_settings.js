@@ -1,5 +1,4 @@
 function awsompleteSettings() {
-
   new Awesomplete('input[data-multiple]', {
     filter: function(text, input) {
       return Awesomplete.FILTER_CONTAINS(text, input.match(/[^,]*$/)[0]);
