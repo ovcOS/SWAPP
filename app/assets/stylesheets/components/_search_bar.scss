@@ -1,17 +1,17 @@
 #search-bar {
-
     position: relative;
     margin: 20px 0px;
 
   .form-control {
     font-size: $p;
     height: 30px;
-    width: 330px;
+    width: 100%;
     background-color: transparent;
     border: 1px solid lightgray;
     border-radius: 2px;
     color: $gunmetal;
     padding-left: 35px;
+    font-family: $body-font;
   }
 
   .search-bar__icon {
