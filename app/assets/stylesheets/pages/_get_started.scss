@@ -31,11 +31,11 @@
 
   .input_cont {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
 
-    label {
-      margin-right: 5px;
+    p {
+      margin: 0px;
     }
 
     input {
