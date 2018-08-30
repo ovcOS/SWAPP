@@ -10,7 +10,7 @@
       <div id="search-bar">
         <%= form_tag users_path, method: :get do %>
           <%= text_field_tag :query,
-          params[:query], class: "form-control",
+          params[:query], class: "search-bar__custom",
           placeholder: "Search a skill ( ex: guitar, illusionism, tennis, ... )"%>
           <span class="fas fa-search search-bar__icon"></span>
         <% end %>

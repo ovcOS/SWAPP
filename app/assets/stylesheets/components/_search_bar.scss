@@ -2,7 +2,7 @@
     position: relative;
     margin: 20px 0px;
 
-  .form-control {
+  .search-bar__custom {
     font-size: $p;
     height: 30px;
     width: 100%;
@@ -21,6 +21,5 @@
     z-index: 1;
     font-size: 15px;
     color: $gunmetal;
-
   }
 }
