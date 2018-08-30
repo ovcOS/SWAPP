@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :find_user, only: %i[show edit]
 
   def index
+    @user = current_user
     @users = User.best_matches(current_user)
   end
 
