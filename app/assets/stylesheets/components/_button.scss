@@ -18,3 +18,26 @@
  color: $rich-lilac;
 }
 
+.button-small {
+  text-decoration: none;
+  color: white;
+  background-color: $flame;
+  width: 129px;
+  height: 25px;
+  border-radius: 50px !important;
+  font-weight: lighter;
+  font-size: 13px;
+  opacity: 0.93;
+  border: 0px;
+}
+
+.button-small:hover {
+ text-decoration: none;
+ opacity: 1;
+ color: white;
+}
+
+
+  // <form action="<%= user_session_path %>">
+  //   <button class="button-small">Sign In</button>
+  // </form>
