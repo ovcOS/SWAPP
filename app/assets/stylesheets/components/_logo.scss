@@ -2,4 +2,12 @@
   padding: 61px 0px;
 }
 
-//<%= image_tag "logo_swapp.png", class: "logo" %>
+.logo-padding_small {
+ padding: 15px 0px;
+}
+
+.logo-padding_tiny {
+ padding: 5px 0px;
+}
+
+//<%= image_tag "logo.svg", class: "logo" %>
