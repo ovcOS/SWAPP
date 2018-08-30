@@ -39,3 +39,20 @@
   color: $gunmetal;
   }
 }
+
+#market {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90vh;
+  overflow: scroll;
+}
+
+.market__button {
+  position: sticky;
+  bottom: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

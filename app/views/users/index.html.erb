@@ -1,9 +1,10 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <% @users.each do |user| %>
-        <%= link_to user_path(user) do %>
-
+<div id="market">
+  <div class="container">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <% @users.each do |user| %>
+          <%= link_to user_path(user) do %>
           <div id="card">
             <div class="card__profile">
               <%= image_tag(user.profile_photo, class: "card__profile-photo") %>
@@ -12,15 +13,19 @@
                 <p><%= user.location %></p>
               </div>
             </div>
-
             <div class="card__skills">
               <p><strong>Skills</strong>: <%= user.skill_names %></p>
               <p><strong>Interested in</strong>: <%= user.tag_names %></p>
             </div>
           </div>
-
-        <% end %>
-      <% end %>
+          <% end %>
+          <% end %>
+        </div>
+      </div>
     </div>
+    <form class="market__button" action="<%= profile_path  %>">
+      <button class="button-small">Complete Profile</button>
+    </form>
   </div>
-</div>
+
+
