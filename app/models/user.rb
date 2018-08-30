@@ -42,6 +42,10 @@ class User < ApplicationRecord
     tags.map { |tag| tag.name.titleize }.join(', ').strip
   end
 
+  def completed_profile?
+    self.location.present? && self.skills.count > 0 && self.tags.count > 0 && self.media.count > 0 && self.profile_photo.present?
+  end
+
   private
 
   def add_to_tag_users(skill)
