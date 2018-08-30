@@ -11,11 +11,12 @@
           <div class="global-nav__element">
 
               <%= image_tag 'home_icon.svg'  %>
+
           </div>
           <div class="global-nav__element">
-
+            <%= link_to profile_path do %>
               <%= image_tag 'user_icon.svg'  %>
-
+            <% end %>
           </div>
         </div>
       </div>

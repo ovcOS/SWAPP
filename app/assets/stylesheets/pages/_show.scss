@@ -1,8 +1,10 @@
-.profile-content.active {
+.btn-container {
+  text-align: center;
+}
+
+.show-content.active  {
   display: block;
   min-height: 260px;
-  margin-bottom: 83px;
-
   h3 {
     color: $ocean-blue;
     font-size: $h3;
@@ -26,14 +28,6 @@
   }
 }
 
-#btn-update-about {
-  padding-left: 1px;
-}
-
-.btn-update-other {
-  padding-left: 1px;
-}
-
-.profile-content {
+.show-content  {
   display: none;
 }

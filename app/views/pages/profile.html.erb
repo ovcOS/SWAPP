@@ -1,18 +1,17 @@
-<div class="profile-banner" style="background-image: linear-gradient(150deg, rgba(48, 35, 174, .8) 0%, rgba(200, 109, 115, .9) 100%), url(<%= @user.profile_photo %>);   ">
+<div class="profile-banner" style="background-image: linear-gradient(150deg, rgba(48, 35, 174, .85) 0%, rgba(200, 109, 115, .95) 100%), url(<%= @user.profile_photo %>);   ">
+  <!--   <div class="background-image">
+    <%= image_tag @user.profile_photo %>
+  </div> -->
   <div class="container">
     <div class='row'>
       <div class='col-xs-12 col-md-12'>
         <div class='profile-banner__content'>
           <%= image_tag @user.profile_photo, class: 'avatar'  %></p>
           <h2><%= @user.name.capitalize %></h2>
-          <p><%= @user.email %></p>
+          <p><%= @user.location %></p>
           <div class="tabs">
-            <a href="#" class="button">
-              Info
-            </a>
-            <a href="#" class="button">
-              Media
-            </a>
+            <button id="info" class="btn-tabs active" >Info</button>
+            <button id="media" class="btn-tabs" >Media</button>
           </div>
         </div>
       </div>
@@ -22,37 +21,58 @@
 <div class='container'>
   <div class='row'>
     <div class='col-xs-12'>
-      <div class="content">
-        <div class='content-1 active' id="info">
-          <h3>About <%= @user.name %> <button id="btn-update-about">Update</button></h3>
-          <p class="description" value="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-          </p>
-          <div class="form-update">
-            <%= simple_form_for @user do |f| %>
-              <%= f.input :location %>
-              <%= f.button :submit, 'Submit' %>
-            <% end %>
-          </div>
-          </div>
-          <h3>Skills</h3>
-          <ul>
+      <div id="info-content"class='profile-content active'>
+        <h3>About <%= @user.name.capitalize %> <button id="btn-update-about"><p><u>Update</u></p></button></h3>
+        <p class="description"> <%= @user.description %>
+        </p>
+        <div class="form-update">
+          <%= minimal_form_for @user do |f| %>
+            <%= f.input :description, input_html: { :style=> 'height: 200px;', :rows => 10} %>
+            <%= f.button :submit, 'Submit' %>
+          <% end %>
+        </div>
+        <h3>Skills <button class="btn-update-other"><p><u>Update</u></p></button></h3>
+        <ul>
+          <% @user.skills.each do |skill| %>
+            <li><%= skill.name %></li>
 
-            <li></li>
-          </ul>
-          <h3>Interests</h3>
+          <% end %>
+          <li> Guitar</li>
+          <li> Guitar</li>
+          <li> Guitar</li>
+        </ul>
+        <div class="form-update">
+          <%= minimal_form_for @user do |f| %>
+            <%= f.input :skills, input_html: { value: "", placeholder: "What are you good at?"  } %>
+            <%= f.button :submit, 'Submit' %>
+          <% end %>
         </div>
-        <div class='content-2' id="media">
-          <p>No media to display</p>
+        <h3>Interests <button class="btn-update-other"><p><u>Update</u></p></button></h3>
+        <ul>
+          <% @user.tags.each do |tag| %>
+            <li><%= tag.name %></li>
+
+          <% end %>
+          <li> Guitar</li>
+          <li> Graphic design</li>
+          <li> Guitar</li>
+        </ul>
+        <div class="form-update">
+          <%= minimal_form_for @user do |f| %>
+            <%= f.input :tags, input_html: { value: "", placeholder: "What do you like?" }  %>
+            <%= f.button :submit, 'Submit' %>
+          <% end %>
         </div>
+      </div>
+      <div id="media-content" class="profile-content">
+        <h3>Images</h3>
+        <p>No media to be display</p>
+        <h3>Videos</h3>
+        <p>No media to display</p>
       </div>
     </div>
   </div>
 </div>
 
 
-<div class='btn-container'>
-  <button class='btn-profile'>Chat with <%= @user.name.capitalize %></button>
-</div>
 
