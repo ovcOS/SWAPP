@@ -1,10 +1,10 @@
-<div class="profile-banner" style="background-image: linear-gradient(150deg, rgba(48, 35, 174, .85) 0%, rgba(200, 109, 115, .95) 100%), url(<%= @user.profile_photo %>);   ">
+<div class="profile-banner" style="background-image: linear-gradient(150deg, rgba(48, 35, 174, .85) 0%, rgba(200, 109, 115, .95) 100%), url(<%= @user.profile_photo.filename %>);   ">
   <div class="container">
     <div class='row'>
       <div class='col-xs-12 col-md-12'>
         <div class='profile-banner__content'>
-          <% unless @user.profile_photo.nil? %>
-            <%= image_tag @user.profile_photo, class: 'avatar'  %></p>
+          <% unless @user.profile_photo.filename.nil? %>
+            <%= image_tag @user.profile_photo.filename, class: 'avatar'  %></p>
           <% end %>
           <h2><%= @user.name.capitalize %></h2>
           <p><%= @user.location %></p>
