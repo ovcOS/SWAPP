@@ -1,3 +1,50 @@
-<h1><%= @user.name %></h1>
-<p><%= @user.profile_photo %></p>
-<p><%= @user.email %></p>
+<div class="profile-banner" style="background-image: linear-gradient(150deg, rgba(48, 35, 174, .85) 0%, rgba(200, 109, 115, .95) 100%), url(<%= @user.profile_photo %>);   ">
+  <div class="container">
+    <div class='row'>
+      <div class='col-xs-12 col-md-12'>
+        <div class='profile-banner__content'>
+          <%= image_tag @user.profile_photo, class: 'avatar'  %></p>
+          <h2><%= @user.name.capitalize %></h2>
+          <p><%= @user.location %></p>
+          <div class="tabs">
+            <button id="info" class="btn-tabs active">INFO</button>
+            <button id="media" class="btn-tabs">MEDIA</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class='container'>
+  <div class='row'>
+    <div class='col-xs-12'>
+      <div id="info-content"class='show-content active '>
+        <h3>ABOUT </h3>
+        <p class="description" value="text"> <%= @user.description %>
+        </p>
+        <h3>SKILLS</h3>
+        <ul>
+          <% @user.skills.each do |skill| %>
+            <li><%= skill.name %></li>
+          <% end %>
+
+        </ul>
+        <h3>INTERESTS</h3>
+        <ul>
+          <% @user.tags.each do |tag| %>
+            <li><%= tag.name %></li>
+          <% end %>
+
+        </ul>
+      </div>
+      <div id="media-content" class="show-content">
+        <h3><%= @user.name.upcase %> IN ACTION...</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class='btn-container'>
+  <button class='btn-profile'>CHAT WITH <%= @user.name.upcase %></button>
+</div>
