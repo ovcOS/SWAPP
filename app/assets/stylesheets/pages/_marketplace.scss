@@ -1,0 +1,41 @@
+#card {
+  height: 234px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  border: 1px solid lightgray;
+  border-radius: 2px;
+  overflow: hidden;
+
+  p {
+    font-size: $p;
+}
+
+.card__profile {
+  height: 70%;
+  position: relative;
+  color: white;
+  background-image: linear-gradient(rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 70%);
+}
+
+.card__profile-photo {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  filter: opacity(70%);
+}
+
+.card__profile-info {
+  height: 30%;
+  position: absolute;
+  left: 10px;
+  bottom: 15px;
+}
+
+.card__skills {
+  padding: 10px 0px 0px 10px;
+  box-shadow: 0.2px 0.2px 4px lightgray;
+  color: $gunmetal;
+  }
+}
