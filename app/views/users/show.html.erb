@@ -7,8 +7,8 @@
           <h2><%= @user.name.capitalize %></h2>
           <p><%= @user.location %></p>
           <div class="tabs">
-            <button id="info" class="btn-tabs active">Info</button>
-            <button id="media" class="btn-tabs">Media</button>
+            <button id="info" class="btn-tabs active">INFO</button>
+            <button id="media" class="btn-tabs">MEDIA</button>
           </div>
         </div>
       </div>
@@ -19,33 +19,26 @@
   <div class='row'>
     <div class='col-xs-12'>
       <div id="info-content"class='show-content active '>
-        <h3>About <%= @user.name.capitalize %> </h3>
+        <h3>ABOUT </h3>
         <p class="description" value="text"> <%= @user.description %>
         </p>
-        <h3>Skills</h3>
+        <h3>SKILLS</h3>
         <ul>
           <% @user.skills.each do |skill| %>
             <li><%= skill.name %></li>
           <% end %>
-          <li> Guitar</li>
-          <li> Guitar</li>
-          <li> Guitar</li>
+
         </ul>
-        <h3>Interests</h3>
+        <h3>INTERESTS</h3>
         <ul>
           <% @user.tags.each do |tag| %>
             <li><%= tag.name %></li>
           <% end %>
-          <li> Guitar</li>
-          <li> Guitar</li>
-          <li> Guitar</li>
+
         </ul>
       </div>
       <div id="media-content" class="show-content">
-        <h3>Images</h3>
-        <p>No media to be display</p>
-        <h3>Videos</h3>
-        <p>No media to display</p>
+        <h3><%= @user.name.upcase %> IN ACTION...</h3>
       </div>
     </div>
   </div>

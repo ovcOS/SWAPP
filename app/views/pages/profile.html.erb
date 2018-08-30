@@ -10,8 +10,8 @@
           <h2><%= @user.name.capitalize %></h2>
           <p><%= @user.location %></p>
           <div class="tabs">
-            <button id="info" class="btn-tabs active" >Info</button>
-            <button id="media" class="btn-tabs" >Media</button>
+            <button id="info" class="btn-tabs active" >INFO</button>
+            <button id="media" class="btn-tabs" >MEDIA</button>
           </div>
         </div>
       </div>
@@ -22,7 +22,7 @@
   <div class='row'>
     <div class='col-xs-12'>
       <div id="info-content"class='profile-content active'>
-        <h3>About <%= @user.name.capitalize %> <button id="btn-update-about"><p><u>Update</u></p></button></h3>
+        <h3>ABOUT <button id="btn-update-about"><p><u>Update</u></p></button></h3>
         <p class="description"> <%= @user.description %>
         </p>
         <div class="form-update">
@@ -31,15 +31,12 @@
             <%= f.button :submit, 'Submit' %>
           <% end %>
         </div>
-        <h3>Skills <button class="btn-update-other"><p><u>Update</u></p></button></h3>
+        <h3>SKILLS <button class="btn-update-other"><p><u>Update</u></p></button></h3>
         <ul>
           <% @user.skills.each do |skill| %>
             <li><%= skill.name %></li>
 
           <% end %>
-          <li> Guitar</li>
-          <li> Guitar</li>
-          <li> Guitar</li>
         </ul>
         <div class="form-update">
           <%= minimal_form_for @user do |f| %>
@@ -47,15 +44,11 @@
             <%= f.button :submit, 'Submit' %>
           <% end %>
         </div>
-        <h3>Interests <button class="btn-update-other"><p><u>Update</u></p></button></h3>
+        <h3>INTERESTS <button class="btn-update-other"><p><u>Update</u></p></button></h3>
         <ul>
           <% @user.tags.each do |tag| %>
             <li><%= tag.name %></li>
-
           <% end %>
-          <li> Guitar</li>
-          <li> Graphic design</li>
-          <li> Guitar</li>
         </ul>
         <div class="form-update">
           <%= minimal_form_for @user do |f| %>
@@ -65,10 +58,7 @@
         </div>
       </div>
       <div id="media-content" class="profile-content">
-        <h3>Images</h3>
-        <p>No media to be display</p>
-        <h3>Videos</h3>
-        <p>No media to display</p>
+        <h3><%= @user.name.upcase %> IN ACTION...</h3>
       </div>
     </div>
   </div>

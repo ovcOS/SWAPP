@@ -3,11 +3,12 @@
   margin: auto;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 0px;
 }
 .btn-tabs.active {
   font-family: $headers-font;
-  font-weight: $normal;
-  font-size: $p;
+  font-weight: $bold;
+  font-size: $h4;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -18,8 +19,8 @@
 
 .btn-tabs {
   font-family: $headers-font;
-  font-weight: $normal;
-  font-size: $p;
+  font-weight: $bold;
+  font-size: $h4;
   border-top: none;
   border-left: none;
   border-right: none;

@@ -9,7 +9,7 @@
     color: $ocean-blue;
     font-size: $h3;
     font-family: $headers-font;
-    font-weight: $bold;
+    font-weight: $normal;
     margin-bottom: 0px;
     p {
       font-weight: $light;
@@ -22,9 +22,11 @@
     font-family: $body-font;
   }
   ul {
+    margin-top: 10px;
     padding-left: 25px;
     font-family: $body-font;
     font-size: $p;
+    line-height:25px;
   }
 }
 
