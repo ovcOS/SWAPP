@@ -1,14 +1,45 @@
-.btn-container {
-  text-align: center;
-}
+.profile-content.active {
+  display: block;
+  min-height: 260px;
+  margin-bottom: 83px;
 
-.profile-content {
-  h4 {
+  h3 {
     color: $ocean-blue;
-    font-size: $h4;
+    font-size: $h3;
+    font-family: $headers-font;
+    font-weight: $normal;
+    margin-bottom: 0px;
+    p {
+      font-weight: $light;
+      font-size: 9px;
+    }
+
   }
   p {
     font-size: $p;
+    font-family: $body-font;
+  }
+  ul {
+    padding-left: 25px;
+    font-family: $body-font;
+    font-size: $p;
+    line-height:25px;
   }
 }
 
+#btn-update-about {
+  padding-left: 1px;
+}
+
+.btn-update-other {
+  padding-left: 1px;
+}
+
+.profile-content {
+  display: none;
+}
+.description {
+  border-bottom: 1px solid $light-gray;
+  padding-bottom: 15px;
+  line-height: 25px;
+}
