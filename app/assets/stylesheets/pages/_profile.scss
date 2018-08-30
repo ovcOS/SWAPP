@@ -30,7 +30,6 @@
 #btn-update-about {
   padding-left: 1px;
 }
-
 .btn-update-other {
   padding-left: 1px;
 }
@@ -42,4 +41,19 @@
   border-bottom: 1px solid $light-gray;
   padding-bottom: 15px;
   line-height: 25px;
+}
+
+.media-display {
+  width: 290px;
+  height: 200px;
+  object-fit: cover;
+  box-shadow: 0.2px 0.2px 4px $light-gray;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#user_profile_photo {
+  font-family: $body-font;
+  color: $gunmetal;
+  text-decoration: underline;
 }

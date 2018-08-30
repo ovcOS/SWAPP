@@ -6,5 +6,6 @@ class PagesController < ApplicationController
 
   def profile
     @user = current_user
+    @medium = Medium.new
   end
 end

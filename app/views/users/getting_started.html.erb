@@ -19,6 +19,14 @@
               <%= f.awesomplete_field(:tags, collection: @tag_names.join(','), placeholder:"ex: xxx, yyy, zzz") %>
             </div>
 
+            <div class="form-update">
+              <%= minimal_form_for @user do |f| %>
+                <%= f.input :profile_photo %>
+                <%= f.input :profile_photo_cache, as: :hidden %>
+                <%= f.button :submit, 'Submit' %>
+              <% end %>
+           </div>
+
            <div class="info_form_button"> <%= f.submit "Continue", class:'button' %></div>
           <% end %>
         </div>

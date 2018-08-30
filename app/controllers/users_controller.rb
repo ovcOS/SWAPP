@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     @user.update_attributes(user_params)
-    redirect_to profile_path(current_user)
+    redirect_to profile_path
     #params[:user][:description]
 
     # if params[:skills].present?
