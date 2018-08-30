@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :skills, through: :skill_users, after_add: :add_to_tag_users, after_remove: :remove_from_tag_users, dependent: :destroy
   has_many :tags, through: :tag_users
   has_many :media
+  mount_uploader :profile_photo, PhotoUploader
 
   validates :name, presence: true
 
