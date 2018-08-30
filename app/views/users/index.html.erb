@@ -1,6 +1,21 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
+
+      <div class="market__info">
+        <h4>Explore the <strong>SWAPP</strong> community!</h4>
+      </div>
+
+      <div id="search-bar">
+        <%= form_tag users_path, method: :get do %>
+          <%= text_field_tag :query,
+          params[:query], class: "form-control",
+          placeholder: "Search a skill ( ex: guitar, illusionism, tennis, ... )"%>
+          <span class="fas fa-search search-bar__icon"></span>
+          <% end %>
+      </div>
+
+
       <% @users.each do |user| %>
         <%= link_to user_path(user) do %>
 

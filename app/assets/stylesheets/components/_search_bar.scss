@@ -1,0 +1,26 @@
+#search-bar {
+
+    position: relative;
+    margin: 20px 0px;
+
+  .form-control {
+    font-size: $p;
+    height: 30px;
+    width: 330px;
+    background-color: transparent;
+    border: 1px solid lightgray;
+    border-radius: 2px;
+    color: $gunmetal;
+    padding-left: 35px;
+  }
+
+  .search-bar__icon {
+    position:absolute;
+    bottom: 7px;
+    left: 11px;
+    z-index: 1;
+    font-size: 15px;
+    color: $gunmetal;
+
+  }
+}
