@@ -24,7 +24,6 @@
   width: 100%;
   object-fit: cover;
   filter: opacity(70%);
-
 }
 
 .card__profile-info {
@@ -32,13 +31,11 @@
   position: absolute;
   left: 10px;
   bottom: 15px;
-
 }
 
 .card__skills {
   padding: 10px 0px 0px 10px;
   box-shadow: 0.2px 0.2px 4px lightgray;
   color: $gunmetal;
-
   }
 }

@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :find_user, only: %i[show edit]
 
   def index
-    @users = User.all.limit(5)
+    @users = User.best_matches(current_user)
   end
 
   def show
