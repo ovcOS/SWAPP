@@ -1,11 +1,18 @@
-<div class="profile-banner" style="background-image: linear-gradient(150deg, #3023AE 0%, #C86DD7 100%), url(<%= @user.profile_photo %>);  ">
+<div class="profile-banner" style="background-image: linear-gradient(150deg, rgba(48, 35, 174, .85) 0%, rgba(200, 109, 115, .95) 100%), url(<%= @user.profile_photo %>);   ">
+  <!--   <div class="background-image">
+    <%= image_tag @user.profile_photo %>
+  </div> -->
   <div class="container">
     <div class='row'>
       <div class='col-xs-12 col-md-12'>
         <div class='profile-banner__content'>
           <%= image_tag @user.profile_photo, class: 'avatar'  %></p>
-          <h3><%= @user.name.capitalize %></h3>
-          <p><%= @user.email %></p>
+          <h2><%= @user.name.capitalize %></h2>
+          <p><%= @user.location %></p>
+          <div class="tabs">
+            <button id="info" class="btn-tabs active" >INFO</button>
+            <button id="media" class="btn-tabs" >MEDIA</button>
+          </div>
         </div>
       </div>
     </div>
@@ -14,16 +21,48 @@
 <div class='container'>
   <div class='row'>
     <div class='col-xs-12'>
-      <div class='profile-content'>
-        <h4>About <%= @user.name %></h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <h4>Skills</h4>
-        <h4>Interests</h4>
+      <div id="info-content"class='profile-content active'>
+        <h3>ABOUT <button id="btn-update-about"><p><u>Update</u></p></button></h3>
+        <p class="description"> <%= @user.description %>
+        </p>
+        <div class="form-update">
+          <%= minimal_form_for @user do |f| %>
+            <%= f.input :description, input_html: { :style=> 'height: 200px;', :rows => 10} %>
+            <%= f.button :submit, 'Submit' %>
+          <% end %>
+        </div>
+        <h3>SKILLS <button class="btn-update-other"><p><u>Update</u></p></button></h3>
+        <ul>
+          <% @user.skills.each do |skill| %>
+            <li><%= skill.name %></li>
+
+          <% end %>
+        </ul>
+        <div class="form-update">
+          <%= minimal_form_for @user do |f| %>
+            <%= f.input :skills, input_html: { value: "", placeholder: "What are you good at?"  } %>
+            <%= f.button :submit, 'Submit' %>
+          <% end %>
+        </div>
+        <h3>INTERESTS <button class="btn-update-other"><p><u>Update</u></p></button></h3>
+        <ul>
+          <% @user.tags.each do |tag| %>
+            <li><%= tag.name %></li>
+          <% end %>
+        </ul>
+        <div class="form-update">
+          <%= minimal_form_for @user do |f| %>
+            <%= f.input :tags, input_html: { value: "", placeholder: "What do you like?" }  %>
+            <%= f.button :submit, 'Submit' %>
+          <% end %>
+        </div>
+      </div>
+      <div id="media-content" class="profile-content">
+        <h3><%= @user.name.upcase %> IN ACTION...</h3>
       </div>
     </div>
   </div>
 </div>
-<div class='btn-container'>
-  <button class='btn-profile'>Chat with <%= @user.name.capitalize %></button>
-</div>
+
+
 

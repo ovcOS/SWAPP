@@ -4,7 +4,7 @@
       <div class="col-xs-12">
         <div class="carousel slide" data-ride="carousel" id="quote-carousel">
           <div class="home">
-            <p class="home__logo">LOGO</p>
+            <%= image_tag "logo.svg", class: "logo" %>
             <!-- Bottom Carousel Indicators -->
             <ol class="carousel-indicators">
               <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
@@ -17,25 +17,25 @@
               <!-- Welcome-->
               <div class="item active">
                 <% title = 'WELCOME' %>
-                <% paragraph = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' %>
+                <% paragraph = 'Welcome to SWAPP! The place to meet new people and learn new things.' %>
                 <%=  render "quote", locals: {title: title, paragraph: paragraph} %>
               </div>
               <!-- Quote 1 -->
               <div class="item">
                 <% title = 'CONNECT' %>
-                <% paragraph = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' %>
+                <% paragraph = 'Meeting new people is hard. We think it\'s more fun if you have a common interest over which to bond.' %>
                 <%=  render "quote", locals: {title: title, paragraph: paragraph} %>
               </div>
               <!-- Quote 2 -->
               <div class="item">
                 <% title = 'SHARE' %>
-                <% paragraph = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' %>
+                <% paragraph = 'People want to learn what you know! Help people learn something that you\'re good at.' %>
                 <%=  render "quote", locals: {title: title, paragraph: paragraph} %>
               </div>
               <!-- Quote 3 -->
               <div class="item">
                 <% title = 'LEARN' %>
-                <% paragraph = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' %>
+                <% paragraph = 'Learning new things is great, but lessons are expensive and time consuming. Learn and meet new people with SWAPP. ' %>
                 <%=  render "quote", locals: {title: title, paragraph: paragraph} %>
               </div>
             </div>

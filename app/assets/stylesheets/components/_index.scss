@@ -1,6 +1,6 @@
 // Import your components CSS files here.
 @import "alert";
-@import "navbar";
+@import "global_nav";
 @import "forms";
 @import "home_banner";
 @import "button";
@@ -8,4 +8,7 @@
 @import "profile_banner";
 @import "button_profile";
 @import "avatar";
-@import "search_bar"
+@import "search_bar";
+@import "tabs_profile";
+@import "form_update";
+@import "logo";

@@ -3,17 +3,26 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-size: cover;
+  //position: relative;
 }
 
-.profile-pic {
-  object-fit: cover;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 2px solid white;
-  margin-top: 25px;
+// .background-image {
+//   position:absolute;
+//   top:0;
+//   bottom:0;
+//   z-index: 0;
+//   background-image: linear-gradient(150deg, rgba(48, 35, 174, .8) 0%, rgba(200, 109, 115, .9) 100%);
+//   img {
+//     background-size: cover;
+//     z-index: -1;
+//     filter: blur(5px);
+//     max-width: 100%;
+//     max-height: 100%;
 
-}
+//   }
+
+// }
 
 .profile-banner__content {
   display: flex;
@@ -21,15 +30,17 @@
   align-items: center;
   flex-direction: column;
   color: white;
+  height: 174px;
 
-  h3 {
-    margin-top: 5px;
-    font-size: 24px;
+  h2 {
+    margin-top: 0px;
+    font-size: $h2;
+    font-family: $headers-font;
   }
 
   p {
-    font-weight: 100;
-    font-size: 12px;
+    font-weight: $light;
+    font-size: $p;
   }
 
 }

@@ -17,19 +17,22 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.update(user_params)
+    @user = current_user
+    @user.update_attributes(user_params)
+    redirect_to profile_path(current_user)
+    #params[:user][:description]
 
-    if params[:skills].present?
-      params[:skills].each do |skill_name|
-        @user.skills << Skill.find_by_name(skill_name)
-      end
-    end
+    # if params[:skills].present?
+    #   params[:skills].each do |skill_name|
+    #     @user.skills << Skill.find_by_name(skill_name)
+    #   end
+    # end
 
-    if params[:tags].present?
-      params[:tags].each do |tag_name|
-        @user.tags << Tag.find_by_name(tag_name)
-      end
-    end
+    # if params[:tags].present?
+    #   params[:tags].each do |tag_name|
+    #     @user.tags << Tag.find_by_name(tag_name)
+    #   end
+    # end
   end
 
   def getting_started
@@ -45,6 +48,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params_require(:user).permit(:name, :email, :profile_photo)
+    params.require(:user).permit(:name, :email, :profile_photo, :description)
   end
 end
