@@ -2,7 +2,14 @@ class UsersController < ApplicationController
   before_action :find_user, only: %i[show edit]
 
   def index
-    @users = User.best_matches(current_user)
+    if params[:query].present?
+      @users = User.search_by_fuzzy_skill(params[:query])
+      if @users.empty?
+        @users = User.best_matches(current_user)
+      end
+    else
+      @users = User.best_matches(current_user)
+    end
   end
 
   def show
