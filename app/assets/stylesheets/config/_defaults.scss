@@ -9,3 +9,9 @@ $p: 13px;
 $light: lighter;
 $normal: normal;
 $bold: bold;
+
+
+h5 {
+  font-size: $h5;
+  font-family: $headers_font;
+}
