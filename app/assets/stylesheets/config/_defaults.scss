@@ -10,8 +10,32 @@ $light: lighter;
 $normal: normal;
 $bold: bold;
 
+h1 {
+  font-size: $h1 !important;
+  font-family: $headers-font !important;
+}
+
+h2 {
+  font-size: $h2 !important;
+  font-family: $headers-font !important;
+}
+
+h3 {
+  font-size: $h3 !important;
+  font-family: $headers-font !important;
+}
+
+h4 {
+  font-size: $h4 !important;
+  font-family: $headers-font !important;
+}
 
 h5 {
-  font-size: $h5;
-  font-family: $headers_font;
+  font-size: $h5 !important;
+  font-family: $headers-font !important;
+}
+
+p {
+  font-size: $p !important;
+  font-family: $body-font !important;
 }

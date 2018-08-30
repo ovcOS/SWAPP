@@ -20,6 +20,10 @@ class User < ApplicationRecord
     where(id: ids).order(order)
   }
 
+  scope :search_by_fuzzy_skill, ->(skill) {
+    User.joins(:skills).where("skills.name ILIKE \'%#{skill}%\'")
+ }
+
   def self.best_matches(user)
     ids = joins(:tags).where(tags: { name: user.tags.pluck(:name)})
                       .group(:id)
