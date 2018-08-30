@@ -10,16 +10,19 @@
           <%= form_for @user do |f| %>
 
             <div class="input_cont">
-              <%= f.label :skills, 'Skills:' %>
-              <%= f.awesomplete_field(:skills, collection: @skill_names.join(','), placeholder:"ex: xxx, yyy, zzz") %>
+              <p>What <strong>skills</strong> can you offer? *</p>
+              <%= f.awesomplete_field(:skills, collection: @skill_names.join(','), placeholder:"#{@skill_names.sample}, #{@skill_names.sample}, ...", required: true) %>
             </div>
 
             <div class="input_cont">
-              <%= f.label :intrests, 'Intrests:' %>
-              <%= f.awesomplete_field(:tags, collection: @tag_names.join(','), placeholder:"ex: xxx, yyy, zzz") %>
+              <p>What are you <strong>interested</strong> in? *</p>
+              <%= f.awesomplete_field(:tags, collection: @tag_names.join(','), placeholder:"#{@tag_names.sample}, #{@tag_names.sample}, ...", required: true)%>
             </div>
 
-           <div class="info_form_button"> <%= f.submit "Continue", class:'button' %></div>
+           <div class="info_form_button">
+            <%= f.submit "Continue", class:'button'
+            %>
+          </div>
           <% end %>
         </div>
       </div>
