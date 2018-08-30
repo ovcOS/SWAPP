@@ -1,6 +1,7 @@
 // Specific CSS for your home-page
 .home {
   color: white;
+  font-family: $body-font;
 }
 
 .home__logo {
@@ -10,21 +11,25 @@
 .home__header {
   font-weight: $bold;
   font-size: $h1;
+  font-family: $headers-font;
 }
 
 .home__paragraph {
   font-weight: $normal;
   font-size: $p;
+  font-family: $body-font;
 }
 
 .home__terms {
   font-weight: $light;
   font-size: $h5;
+  font-family: $body-font;
   margin-top: 27px;
   color: white;
 }
 
 .button__top {
+  font-family: $headers-font;
   margin-top: 53px;
   margin-bottom: 10px;
 }
