@@ -2,7 +2,7 @@ require 'open-uri'
 
 puts "Seeding tags"
 tags = {
-          name: %w(music performing_arts visual_arts fitness_wellness languages sports water_sports ball_sports snow_sports extreme_sports martial_arts crafting technology beauty house_care animal_care science engineering humanities cuisine  earth_sciences)
+          name: %w(music performing_arts visual_arts fitness_wellness languages sports water_sports ball_sports snow_sports extreme_sports martial_arts crafting technology beauty house_care animal_care science engineering humanities cuisine earth_sciences)
       }
 
 # generate tags
