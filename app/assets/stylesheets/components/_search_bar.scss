@@ -1,10 +1,10 @@
 #search-bar {
     position: relative;
-    margin: 20px 0px;
+    margin: 20px 0px 15px 0px;
 
   .search-bar__custom {
     font-size: $p;
-    height: 30px;
+    height: 40px;
     width: 100%;
     background-color: transparent;
     border: 1px solid lightgray;
@@ -16,7 +16,7 @@
 
   .search-bar__icon {
     position:absolute;
-    bottom: 7px;
+    bottom: 12px;
     left: 11px;
     z-index: 1;
     font-size: 15px;
