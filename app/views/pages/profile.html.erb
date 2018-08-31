@@ -7,7 +7,7 @@
           <% unless @user.profile_photo_url.nil? %>
             <%= image_tag @user.profile_photo_url, class: 'avatar'  %></p>
           <% end %>
-          <h2><%= @user.name.capitalize %></h2>
+          <h2><%= @user.name.titleize %></h2>
           <p><%= @user.location %></p>
           <div class="tabs">
             <button id="info" class="btn-tabs active" >INFO</button>
@@ -34,12 +34,12 @@
         <h3>SKILLS <button class="btn-update-other"><p><u>Update</u></p></button></h3>
         <ul>
           <% @user.skills.each do |skill| %>
-            <li><%= skill.name %></li>
+            <li><%= skill.name.titleize %></li>
 
           <% end %>
         </ul>
         <div class="form-update">
-          <%= minimal_form_for @medium do |f| %>
+          <%= minimal_form_for @user do |f| %>
             <%= f.input :skills, input_html: { value: "", placeholder: "What are you good at?"  } %>
             <%= f.button :submit, 'Submit' %>
           <% end %>
@@ -47,7 +47,7 @@
         <h3>INTERESTS <button class="btn-update-other"><p><u>Update</u></p></button></h3>
         <ul>
           <% @user.tags.each do |tag| %>
-            <li><%= tag.name %></li>
+            <li><%= tag.name.titleize %></li>
           <% end %>
         </ul>
         <div class="form-update">
