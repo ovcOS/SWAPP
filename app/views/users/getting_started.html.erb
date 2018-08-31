@@ -14,12 +14,12 @@
                 <%= f.hidden_field :profile_photo_cache %>
               <div class="input_cont">
                 <p>What <strong>skills</strong> can you offer? *</p>
-                <%= f.awesomplete_field(:skills, collection: @skill_names.join(','), placeholder:"#{@skill_names.sample}, #{@skill_names.sample}, ...", required: true) %>
+                <%= f.awesomplete_field(:skills, collection: @skill_names.join(','), placeholder:"#{@skill_names.sample}, #{@skill_names.sample}, ...", required: true, multiple: true) %>
               </div>
 
               <div class="input_cont">
                 <p>What are you <strong>interested</strong> in? *</p>
-                <%= f.awesomplete_field(:tags, collection: @tag_names.join(','), placeholder:"#{@tag_names.sample}, #{@tag_names.sample}, ...", required: true)%>
+                <%= f.awesomplete_field(:tags, collection: @tag_names.join(','), placeholder:"#{@tag_names.sample}, #{@tag_names.sample}, ...", required: true, multiple: true)%>
               </div>
             </div>
           </div>
