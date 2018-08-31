@@ -17,6 +17,13 @@ function inPageUpdate() {
         forms[i+1].classList.add('active')
       })
     }
+    var uploadButton = document.querySelector('.btn-upload-image');
+    uploadButton.addEventListener('click', (event) => {
+      console.log(event)
+      let formUpdate = document.querySelectorAll('.form-update');
+      formUpdate[3].classList.add('active');
+      uploadButton.innerHTML = ""
+    })
   }
 }
 

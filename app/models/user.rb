@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :skills, through: :skill_users, after_add: :add_to_tag_users, after_remove: :remove_from_tag_users, dependent: :destroy
   has_many :tags, through: :tag_users
   has_many :media
+  mount_uploader :profile_photo, PhotoUploader
 
   validates :name, presence: true
 
@@ -19,6 +20,10 @@ class User < ApplicationRecord
     )
     where(id: ids).order(order)
   }
+
+  scope :search_by_fuzzy_skill, ->(skill) {
+    User.joins(:skills).where("skills.name ILIKE \'%#{skill}%\'")
+ }
 
   def self.best_matches(user)
     ids = joins(:tags).where(tags: { name: user.tags.pluck(:name)})
@@ -36,6 +41,10 @@ class User < ApplicationRecord
   def tag_names
     tags = self.tags.order("RANDOM()").limit(3)
     tags.map { |tag| tag.name.titleize }.join(', ').strip
+  end
+
+  def completed_profile?
+    self.location.present? && self.skills.count > 0 && self.tags.count > 0 && self.media.count > 0 && self.profile_photo.present?
   end
 
   private

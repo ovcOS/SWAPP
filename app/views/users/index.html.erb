@@ -1,26 +1,53 @@
-<div class="container">
+<div class="market__deco-bar"></div>
+
+<div  class="container market__deco-line">
   <div class="row">
     <div class="col-xs-12">
-      <% @users.each do |user| %>
-        <%= link_to user_path(user) do %>
+      <div id="market">
+        <div>
+          <div class="market__explore">
+             <h2>Explore the <strong>SWAPP</strong> community!</h2>
+           </div>
 
-          <div id="card">
-            <div class="card__profile">
-              <%= image_tag(user.profile_photo, class: "card__profile-photo") %>
-              <div class="card__profile-info">
-                <h4><%= user.name.titleize %></h4>
-                <p><%= user.location %></p>
-              </div>
-            </div>
-
-            <div class="card__skills">
-              <p><strong>Skills</strong>: <%= user.skill_names %></p>
-              <p><strong>Interested in</strong>: <%= user.tag_names %></p>
-            </div>
-          </div>
-
+           <div id="search-bar">
+             <%= form_tag users_path, method: :get do %>
+               <%= text_field_tag :query,
+               params[:query], class: "search-bar__custom",
+               placeholder: "Search a skill ( ex: guitar, illusionism, tennis, ... )"%>
+               <span class="fas fa-search search-bar__icon"></span>
+             <% end %>
+           </div>
+           <% if @users.empty? %>
+             <div class="market__not-found text-center">
+               <p>Sorry, no users with these skills found</p>
+             </div>
+           <% else %>
+             <h3>SUGGESTIONS FOR YOU</h3>
+           <% end %>
+           <% @users.each do |user| %>
+             <%= link_to user_path(user) do %>
+               <div id="card">
+                 <div class="card__profile">
+                   <%= image_tag(user.profile_photo.filename, class: "card__profile-photo") %>
+                   <div class="card__profile-info">
+                     <h2><%= user.name.titleize %></h2>
+                     <h4><%= user.location %></h4>
+                   </div>
+                 </div>
+                 <div class="card__skills">
+                   <p><strong>Skills</strong>: <%= user.skill_names %></p>
+                   <p><strong>Interested in</strong>: <%= user.tag_names %></p>
+                 </div>
+               </div>
+             <% end %>
+           <% end %>
+        </div>
+        <% unless @user.completed_profile? %>
+          <form class="market__button" action="<%= profile_path  %>">
+            <button class="button-small">Complete Profile</button>
+          </form>
         <% end %>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>

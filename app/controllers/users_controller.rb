@@ -2,7 +2,12 @@ class UsersController < ApplicationController
   before_action :find_user, only: %i[show edit]
 
   def index
-    @users = User.best_matches(current_user)
+    @user = current_user
+    if params[:query].present?
+      @users = User.search_by_fuzzy_skill(params[:query])
+    else
+      @users = User.best_matches(current_user)
+    end
   end
 
   def show
@@ -15,7 +20,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     @user.update_attributes(user_params)
-    redirect_to profile_path(current_user)
+    redirect_to profile_path
     #params[:user][:description]
 
     # if params[:skills].present?
