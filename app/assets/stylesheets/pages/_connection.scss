@@ -1,0 +1,27 @@
+.connections__header {
+    h1 {
+      font-size: $h1;
+      font-weight: $light;
+    }
+}
+.connections__body {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 100px;
+  align-items: center;
+  justify-content: center;
+    h3 {
+      font-size: $h3;
+      color: $ocean-blue;
+    }
+
+    p {
+      font-size: $p;
+      color: $gunmetal;
+      font-weight: $light;
+      line-height: 20px;
+      max-width: 204px;
+    }
+}
+
