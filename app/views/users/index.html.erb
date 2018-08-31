@@ -8,7 +8,7 @@
      <%= form_tag users_path, method: :get do %>
        <%= text_field_tag :query,
        params[:query], class: "search-bar__custom",
-       placeholder: "Search a skill ( ex: guitar, illusionism, tennis, ... )"%>
+       placeholder: "Search a skill ( ex: guitar, juggling, tennis, ... )"%>
        <span class="fas fa-search search-bar__icon"></span>
      <% end %>
   </div>
@@ -20,6 +20,7 @@
         <div id="market">
           <% if @users.empty? %>
              <div class="market__not-found text-center">
+              <br>
                <p>Sorry, no users with these skills found</p>
              </div>
           <% else %>
