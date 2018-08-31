@@ -15,4 +15,12 @@ class ApplicationController < ActionController::Base
       redirect_to root_path if request.referrer.nil? || !([root_path, new_user_registration_path, user_session_path, new_user_password_path].include? request.referrer.sub(request.base_url, '').delete('?'))
     end
   end
+
+  def after_sign_up_path_for(resource)
+    getting_started_path
+  end
+
+  def after_inactive_sign_up_path_for(resource)
+    getting_started_path
+  end
 end
