@@ -8,7 +8,7 @@
                placeholder='#{options[:placeholder]}'
                data-list='#{options[:collection]}'
                #{'required' if options[:required]}
-               data-multiple
+               #{'data-multiple' if options[:multiple]}
                data-autofirst
                data-maxitems='4'>
       INP
