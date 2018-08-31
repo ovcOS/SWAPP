@@ -4,12 +4,31 @@
   background-color: white;
   width: 231px;
   height: 30px;
-  border-radius: 50px !important;
+  border-radius: 50px;
   font-weight: lighter;
   font-size: 13px;
   opacity: 0.95;
   box-shadow: 0px 10px 32px;
   border: 0px;
+}
+
+.button--label {
+  text-decoration: none !important;
+  color: $rich-lilac;
+  background-color: white;
+  width: 231px;
+  height: 21px;
+  border-radius: 50px !important;
+  font-weight: lighter !important;
+  font-size: 13px !important;
+  opacity: 0.95;
+  box-shadow: 0px 10px 32px;
+  border: 0px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .button:hover {
@@ -38,6 +57,9 @@
  color: white;
 }
 
+.button--xs {
+  width: 90px;
+}
 
   // <form action="<%= user_session_path %>">
   //   <button class="button-small">Sign In</button>
