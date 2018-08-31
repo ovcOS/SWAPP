@@ -22,12 +22,12 @@ class UsersController < ApplicationController
 
     @user.description = params[:user][:description] if user_params[:description]
     if user_params[:skills]
-      skill = Skill.find_by_name(user_params[:skills].downcase.gsub(' ', '-'))
+      skill = Skill.find_by_name(user_params[:skills].strip.downcase.gsub(' ', '-'))
       @user.skills << skill if skill
     end
 
     if user_params[:tags]
-      tag = Tag.find_by_name(user_params[:tags].downcase.gsub(' ', '_'))
+      tag = Tag.find_by_name(user_params[:tags].strip.downcase.gsub(' ', '_'))
       @user.tags << tag if tag
     end
 
@@ -37,13 +37,15 @@ class UsersController < ApplicationController
 
     if params[:skills].present?
       params[:skills].split(',').each do |skill_name|
-        @user.skills << Skill.find_by_name(skill_name.downcase.gsub(' ', '-'))
+         skill = Skill.find_by_name(skill_name.strip.downcase.gsub(' ', '-'))
+         @user.skills << skill if skill
       end
     end
 
     if params[:tags].present?
       params[:tags].split(',').each do |tag_name|
-        @user.tags << Tag.find_by_name(tag_name.downcase.gsub(' ', '_'))
+        tag = Tag.find_by_name(tag_name.strip.downcase.gsub(' ', '_'))
+        @user.tags << tag if tag
       end
     end
     @user.location = "Barcelona, Spain"
