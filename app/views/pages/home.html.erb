@@ -4,7 +4,7 @@
       <div class="col-xs-12">
         <div class="carousel slide" data-ride="carousel" id="quote-carousel">
           <div class="home">
-            <%= image_tag "logo.svg", class: "logo" %>
+            <%= image_tag "logo.svg", class: "logo-padding_small" %>
             <!-- Bottom Carousel Indicators -->
             <ol class="carousel-indicators">
               <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
@@ -17,37 +17,37 @@
               <!-- Welcome-->
               <div class="item active">
                 <% title = 'WELCOME' %>
-                <% paragraph = 'Welcome to SWAPP! The place to meet new people and learn new things.' %>
+                <% paragraph = 'Hi, we\'re SWAPP. The Skillshare community.' %>
                 <%=  render "quote", locals: {title: title, paragraph: paragraph} %>
               </div>
               <!-- Quote 1 -->
               <div class="item">
-                <% title = 'CONNECT' %>
-                <% paragraph = 'Meeting new people is hard. We think it\'s more fun if you have a common interest over which to bond.' %>
+                <% title = 'SHARE' %>
+                <% paragraph = 'Offer your skills to others. Receive skills in return.' %>
                 <%=  render "quote", locals: {title: title, paragraph: paragraph} %>
               </div>
               <!-- Quote 2 -->
               <div class="item">
-                <% title = 'SHARE' %>
-                <% paragraph = 'People want to learn what you know! Help people learn something that you\'re good at.' %>
+                <% title = 'LEARN' %>
+                <% paragraph = 'Acquire those skills that you\'ve always wanted.' %>
                 <%=  render "quote", locals: {title: title, paragraph: paragraph} %>
               </div>
               <!-- Quote 3 -->
               <div class="item">
-                <% title = 'LEARN' %>
-                <% paragraph = 'Learning new things is great, but lessons are expensive and time consuming. Learn and meet new people with SWAPP. ' %>
+                <% title = 'CONNECT' %>
+                <% paragraph = 'Bond with someone using those skills you love. ' %>
                 <%=  render "quote", locals: {title: title, paragraph: paragraph} %>
               </div>
             </div>
           </div>
         </div>
         <form action="<%= new_user_registration_path %>">
-          <button class="button button__top">Sign Up</button>
+          <button class="button button__top">SIGN UP</button>
         </form>
         <form action="<%= user_session_path %>">
-          <button class="button">Sign In</button>
+          <button class="button">SIGN IN</button>
         </form>
-        <p class="home__terms">By entering I accept terms & conditions</p>
+        <h5 class="home__terms">By entering I accept terms & conditions</h5>
       </div>
     </div>
   </div>

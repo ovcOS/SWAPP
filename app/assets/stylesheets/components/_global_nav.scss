@@ -19,9 +19,19 @@
 .global-nav__element {
   width: 30px;
   height: 40px;
-  img {
+  svg {
     width: 23px;
     height: 23px;
   }
 }
 
+.global-nav__element.purple {
+  width: 30px;
+  height: 40px;
+
+  svg {
+    width: 23px;
+    height: 23px;
+    filter: drop-shadow(4px 4px 4px rgba(180, 180, 180, 0.5));
+  }
+}
