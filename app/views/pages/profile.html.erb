@@ -3,6 +3,7 @@
     <div class='row'>
       <div class='col-xs-12 col-md-12'>
         <div class='profile-banner__content'>
+
           <% unless @user.profile_photo_url.nil? %>
             <%= image_tag @user.profile_photo_url, class: 'avatar'  %></p>
           <% end %>
