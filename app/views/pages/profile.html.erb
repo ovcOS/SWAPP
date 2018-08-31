@@ -1,4 +1,4 @@
-<div class="profile-banner" style="background-image: linear-gradient(150deg, rgba(48, 35, 174, .85) 0%, rgba(200, 109, 115, .95) 100%), url(<%= @user.profile_photo %>);   ">
+<div class="profile-banner" style="background-image: linear-gradient(150deg, rgba(48, 35, 174, .90) 0%, rgba(200, 109, 115, .99) 100%), url(<%= @user.profile_photo %>);   ">
   <div class="container">
     <div class='row'>
       <div class='col-xs-12 col-md-12'>
@@ -7,7 +7,7 @@
           <% unless @user.profile_photo_url.nil? %>
             <%= image_tag @user.profile_photo_url, class: 'avatar'  %></p>
           <% end %>
-          <h2><%= @user.name.capitalize %></h2>
+          <h2><%= @user.name.titleize %></h2>
           <p><%= @user.location %></p>
           <div class="tabs">
             <button id="info" class="btn-tabs active" >INFO</button>
@@ -22,7 +22,7 @@
   <div class='row'>
     <div class='col-xs-12'>
       <div id="info-content"class='profile-content active'>
-        <h3>ABOUT <button id="btn-update-about"><p><u>Update</u></p></button></h3>
+        <h3>ABOUT <button id="btn-update-about"><p><i class="fas fa-pencil-alt"></i></p></button></h3>
         <p class="description"> <%= @user.description %>
         </p>
         <div class="form-update">
@@ -31,23 +31,23 @@
             <%= f.button :submit, 'Submit' %>
           <% end %>
         </div>
-        <h3>SKILLS <button class="btn-update-other"><p><u>Update</u></p></button></h3>
+        <h3>SKILLS <button class="btn-update-other"><p><i class="fas fa-pencil-alt"></i></p></button></h3>
         <ul>
           <% @user.skills.each do |skill| %>
-            <li><%= skill.name %></li>
+            <li><%= skill.name.titleize %></li>
 
           <% end %>
         </ul>
         <div class="form-update">
-          <%= minimal_form_for @medium do |f| %>
+          <%= minimal_form_for @user do |f| %>
             <%= f.input :skills, input_html: { value: "", placeholder: "What are you good at?"  } %>
             <%= f.button :submit, 'Submit' %>
           <% end %>
         </div>
-        <h3>INTERESTS <button class="btn-update-other"><p><u>Update</u></p></button></h3>
+        <h3>INTERESTS <button class="btn-update-other"><p><i class="fas fa-pencil-alt"></i></p></button></h3>
         <ul>
           <% @user.tags.each do |tag| %>
-            <li><%= tag.name %></li>
+            <li><%= tag.name.titleize %></li>
           <% end %>
         </ul>
         <div class="form-update">

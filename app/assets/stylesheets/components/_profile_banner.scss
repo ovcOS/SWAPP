@@ -1,5 +1,5 @@
 .profile-banner {
-  height: 30vh;
+  min-height: 35vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,7 +30,7 @@
   align-items: center;
   flex-direction: column;
   color: white;
-  height: 174px;
+  min-height: 30vh;
 
   h2 {
     margin-top: 0px;

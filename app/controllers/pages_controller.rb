@@ -8,5 +8,7 @@ class PagesController < ApplicationController
   def profile
     @user = current_user
     @medium = Medium.new
+    @skill = Skill.new
+    @tag = Tag.new
   end
 end
