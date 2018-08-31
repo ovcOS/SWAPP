@@ -3,13 +3,11 @@
     <div class="row">
       <div class="col-xs-12">
         <div class="header">
-          <%= image_tag "logo.svg", class: "logo-padding_tiny" %>
           <h1>Getting Started</h1>
-          <p>Just a few more things;</p>
+          <p>Just a few more things...</p>
         </div>
-        <div class="additional_info_form">
-          <%= form_for @user do |f| %>
-
+        <%= form_for @user do |f| %>
+          <div class="additional_info_form">
             <div class="form_inputs">
                 <label class="button--label button--xs" for="user_profile_photo">Profile Picture</label>
                 <%= f.file_field :profile_photo, class:'fuck-off'%>
@@ -24,12 +22,11 @@
                 <%= f.awesomplete_field(:tags, collection: @tag_names.join(','), placeholder:"#{@tag_names.sample}, #{@tag_names.sample}, ...", required: true)%>
               </div>
             </div>
-           <div class="info_form_button">
-            <%= f.submit "Continue", class:'button'
-            %>
           </div>
-          <% end %>
+         <div class="info_form_button">
+          <%= f.submit "Continue", class:'button' %>
         </div>
+        <% end %>
       </div>
     </div>
   </div>
