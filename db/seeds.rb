@@ -20,39 +20,39 @@ skills = {
 
           fitness_wellness: %w(weight-lifting running triathlon cycling swimming gymnastics aerobics water-aerobics yoga nutrition pilates stretching crossfit feldenkrais meditation walking jogging tai-chi qi-gong martial-arts medicine physiotherapy occupatinal-therapist chiropractic psychology),
 
-         languages: %w(pronounciation public-speaking reading writing grammar spelling catalan mandarin spanish english hindi arabic portuguese bengali russian japanese punjabi german javanese korean vietnamese french turkish italian cantonese thai polish xiang ukranian filipino romanian greek swedish norwegian finnish danish slovak latvian belarusian czech hungarian),
+          languages: %w(pronounciation public-speaking reading writing grammar spelling catalan mandarin spanish english hindi arabic portuguese bengali russian japanese punjabi german javanese korean vietnamese french turkish italian cantonese thai polish xiang ukranian filipino romanian greek swedish norwegian finnish danish slovak latvian belarusian czech hungarian),
 
-         sports: %w(gymnastics cheerleading track-and-field dancing gliding sky-diving base-jumping archery badminton football american-football rugby padel ping-pong tennis beach-tennis volleyball beach-volleyball basketball baseball softball cricket skateboarding scootering snowboarding skiing surfing windsurfing wakesurfing bodyboarding kitesurfing climbing hiking cycling BXM wrestling boxing airsoft laser-tag paintball billiards equine-sports fishing flying-disc-sports golf handball hockey basque-pelota running sailing free-running parkour canoeing kayaking rafting rowing scuba-diving cliff-diving weight-lifting calisthenics auto-racing karting motorcycle-racing chess lacrosse bowling swimming water-polo),
+          sports: %w(gymnastics cheerleading track-and-field dancing gliding sky-diving base-jumping archery badminton football american-football rugby padel ping-pong tennis beach-tennis volleyball beach-volleyball basketball baseball softball cricket skateboarding scootering snowboarding skiing surfing windsurfing wakesurfing bodyboarding kitesurfing climbing hiking cycling BXM wrestling boxing airsoft laser-tag paintball billiards equine-sports fishing flying-disc-sports golf handball hockey basque-pelota running sailing free-running parkour canoeing kayaking rafting rowing scuba-diving cliff-diving weight-lifting calisthenics auto-racing karting motorcycle-racing chess lacrosse bowling swimming water-polo),
 
-         water_sports: %w(surfing windsurfing wakesurfing bodyboarding kitesurfing water-polo water-aerobics swimming scuba-diving cliff-diving),
+          water_sports: %w(surfing windsurfing wakesurfing bodyboarding kitesurfing water-polo water-aerobics swimming scuba-diving cliff-diving),
 
-         ball_sports: %w(football american-football rugby padel ping-pong tennis beach-tennis volleyball beach-volleyball basketball baseball softball cricket basque-pelota bowling),
+          ball_sports: %w(football american-football rugby padel ping-pong tennis beach-tennis volleyball beach-volleyball basketball baseball softball cricket basque-pelota bowling),
 
-         snow_sports: %w(snowboarding skiing),
+          snow_sports: %w(snowboarding skiing),
 
-         extreme_sports: %w(gliding sky-diving base-jumping snowboarding skiing frestyle-skiing high-mountain-skiing surfing windsurfing wakesurfing kitesurfing climbing parkour rafting cliff-diving auto-racing motorcycle-racing),
+          extreme_sports: %w(gliding sky-diving base-jumping snowboarding skiing frestyle-skiing high-mountain-skiing surfing windsurfing wakesurfing kitesurfing climbing parkour rafting cliff-diving auto-racing motorcycle-racing),
 
-         martial_arts: %w(martial-arts MMA taekwondo jiujitsu muay-thai krav-maga karate judo kickboxing aikido capoeira),
+          martial_arts: %w(martial-arts MMA taekwondo jiujitsu muay-thai krav-maga karate judo kickboxing aikido capoeira),
 
-         crafting: %w(sowing woodworking scrap-booking decoupage knitting origami leather-crafting sculpture soapmaking candlemaking welding carpentry),
+          crafting: %w(sowing woodworking scrap-booking decoupage knitting origami leather-crafting sculpture soapmaking candlemaking welding carpentry),
 
-         beauty: %w(fashion-design makeup hairdressing),
+          beauty: %w(fashion-design makeup hairdressing),
 
-         house_care: %w(wall-painting gardening carpentry feng-shui interior-design cleaning woodworking),
+          house_care: %w(wall-painting gardening carpentry feng-shui interior-design cleaning woodworking),
 
-         animal_care: %w(veterinary pet-training dog-training cat-training exotic-animal-care),
+          animal_care: %w(veterinary pet-training dog-training cat-training exotic-animal-care),
 
-         science: %w(chemistry physics mathematics astronomy biology biochemistry pharmacology medicine physiotherapy botany psychology geology ecology oceanography zoology human-biology botany social-science computer-science data-science veterinary),
+          science: %w(chemistry physics mathematics astronomy biology biochemistry pharmacology medicine physiotherapy botany psychology geology ecology oceanography zoology human-biology botany social-science computer-science data-science veterinary engineering),
 
-         earth_sciences: %w(ecology geology oceanography zoology human-biology botany),
+          earth_sciences: %w(ecology geology oceanography zoology human-biology botany),
 
-         technology: %w(programming computer-science robotics engineering data-science),
+          technology: %w(programming computer-science robotics engineering data-science),
 
-         social_sciences: %w(anthropology communication economics education political-science psychology sociology),
+          social_sciences: %w(anthropology communication economics education political-science psychology sociology),
 
-         humanities: %w(social-science anthropology archaeology history literature philosophy),
+          humanities: %w(social-science anthropology archaeology history literature philosophy),
 
-         cuisine: %w(baking sushi-preparation pizza-making indian-cuisine asian-cuisine mediterranean-cuisine french-cuisine spanish-cuisine italian-cuisine american-cuisine )
+          cuisine: %w(baking sushi-preparation pizza-making indian-cuisine asian-cuisine mediterranean-cuisine french-cuisine spanish-cuisine italian-cuisine american-cuisine)
          }
 
 # associate tag to skills
