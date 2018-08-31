@@ -28,7 +28,7 @@
              <%= link_to user_path(user) do %>
                <div id="card">
                  <div class="card__profile">
-                   <%= image_tag(user.profile_photo.filename, class: "card__profile-photo") %>
+                   <%= image_tag(user.profile_photo, class: "card__profile-photo") %>
                    <div class="card__profile-info">
                      <h2><%= user.name.titleize %></h2>
                      <h4><%= user.location %></h4>
