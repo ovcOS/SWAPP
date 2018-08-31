@@ -48,14 +48,14 @@ puts "Seeding users"
 
 # generate users
 100.times  {
-  url = "https://randomuser.me/api/?inc=name,\%20picture,\%20email"
+  url = "https://randomuser.me/api/"
   user_api = open(url).read
   api_fields = JSON.parse(user_api)
   name = api_fields["results"][0]["name"]["first"] + " " + api_fields["results"][0]["name"]["last"]
   email = api_fields["results"][0]["email"]
   picture = api_fields["results"][0]["picture"]["large"]
   location = 'Barcelona, Spain'
-  new_user = User.create(name: name, email: email, password: password, location: location, profile_photo: picture)
+  new_user = User.create(name: name, email: email, password: password, location: location, remote_profile_photo_url: picture)
    rand(1..3).times do
     skill = Skill.all.sample
     unless new_user.skills.include? skill
