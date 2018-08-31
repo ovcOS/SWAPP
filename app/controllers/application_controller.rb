@@ -8,14 +8,6 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
 
-  def after_sign_up_path_for(resource)
-    getting_started_path
-  end
-
-  def after_inactive_sign_up_path_for(resource)
-    getting_started_path
-  end
-
   def authenticate_user!
     if user_signed_in?
       super
