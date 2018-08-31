@@ -36,17 +36,17 @@ class UsersController < ApplicationController
     end
 
     if params[:skills].present?
-      params[:skills].each do |skill_name|
-        @user.skills << Skill.find_by_name(skill_name)
+      params[:skills].split(',').each do |skill_name|
+        @user.skills << Skill.find_by_name(skill_name.downcase.gsub(' ', '-'))
       end
     end
 
     if params[:tags].present?
-      params[:tags].each do |tag_name|
-        @user.tags << Tag.find_by_name(tag_name)
+      params[:tags].split(',').each do |tag_name|
+        @user.tags << Tag.find_by_name(tag_name.downcase.gsub(' ', '_'))
       end
     end
-
+    @user.location = "Barcelona, Spain"
     @user.save!
     redirect_to profile_path
   end
