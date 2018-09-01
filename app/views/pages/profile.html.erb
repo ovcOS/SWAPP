@@ -36,12 +36,15 @@
           <% end %>
         </div>
         <h3>SKILLS <button class="btn-update-other"><p><i class="fas fa-pencil-alt"></i></p></button></h3>
-        <ul>
-          <% @user.skills.each do |skill| %>
-            <li><%= skill.name.titleize %></li>
 
+        <div class="bubble-box">
+          <% @user.skills.each do |skill| %>
+            <div class="bubble">
+              <%= skill.name.titleize %>
+            </div>
           <% end %>
-        </ul>
+        </div>
+
         <div class="form-update">
           <%= minimal_form_for @user do |f| %>
             <%= f.input :skills, input_html: { value: "", placeholder: "What are you good at?"  } %>
@@ -49,11 +52,15 @@
           <% end %>
         </div>
         <h3>INTERESTS <button class="btn-update-other"><p><i class="fas fa-pencil-alt"></i></p></button></h3>
-        <ul>
+
+        <div class="bubble-box">
           <% @user.tags.each do |tag| %>
-            <li><%= tag.name.titleize %></li>
+            <div class="bubble">
+              <%= tag.name.titleize %>
+            </div>
           <% end %>
-        </ul>
+        </div>
+
         <div class="form-update">
           <%= minimal_form_for @user do |f| %>
             <%= f.input :tags, input_html: { value: "", placeholder: "What do you like?" }  %>

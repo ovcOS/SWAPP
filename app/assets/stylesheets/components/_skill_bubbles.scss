@@ -1,0 +1,17 @@
+.bubble-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: -5px;
+}
+
+.bubble {
+  color: $gunmetal;
+  border: 1px solid $ocean-blue;
+  border-radius: 30px;
+  padding: 5px 13px;
+  margin: 10px 10px 0px 0px;
+  font-size: $p;
+  font-weight: $light;
+}
