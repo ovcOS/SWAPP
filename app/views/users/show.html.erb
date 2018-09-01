@@ -1,16 +1,21 @@
-<div class="profile-banner" style="background-image: linear-gradient(150deg, rgba(48, 35, 174, .90) 0%, rgba(200, 109, 115, .99) 100%), url(<%= @user.profile_photo %>);   ">
-  <div class="container">
-    <div class='row'>
-      <div class='col-xs-12 col-md-12'>
-        <div class='profile-banner__content'>
-          <% unless @user.profile_photo_url == nil %>
-            <%= image_tag @user.profile_photo_url, class: 'avatar'  %></p>
-          <% end %>
-          <h2><%= @user.name.titleize %></h2>
-          <p><%= @user.location %></p>
-          <div class="tabs">
-            <button id="info" class="btn-tabs active">INFO</button>
-            <button id="media" class="btn-tabs">MEDIA</button>
+<div class="profile-banner">
+  <div class="profile-banner__background">
+    <%= image_tag @user.profile_photo_url %>
+  </div>
+  <div class="profile-banner__container">
+    <div class="container">
+      <div class='row'>
+        <div class='col-xs-12 col-md-12'>
+          <div class='profile-banner__container__content'>
+            <% unless @user.profile_photo_url.nil? %>
+              <%= image_tag @user.profile_photo_url, class: 'avatar'  %></p>
+            <% end %>
+            <h2><%= @user.name.titleize %></h2>
+            <p><%= @user.location %></p>
+            <div class="tabs">
+              <button id="info" class="btn-tabs active" >INFO</button>
+              <button id="media" class="btn-tabs" >MEDIA</button>
+            </div>
           </div>
         </div>
       </div>
