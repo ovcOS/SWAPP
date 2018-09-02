@@ -11,7 +11,8 @@ class User < ApplicationRecord
   has_many :tags, through: :tag_users
   has_many :media
   mount_uploader :profile_photo, PhotoUploader
-
+  has_many :connections, dependent: :destroy
+  has_many :messages, dependent: :destroy
   validates :name, presence: true
 
   scope :for_ids_with_order, ->(ids) {

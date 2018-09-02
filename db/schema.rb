@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_30_195715) do
+ActiveRecord::Schema.define(version: 2018_09_02_194737) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,12 +18,12 @@ ActiveRecord::Schema.define(version: 2018_08_30_195715) do
   create_table "connections", force: :cascade do |t|
     t.string "status", default: "pending"
     t.string "request"
-    t.bigint "requester_id"
+    t.bigint "user_id"
     t.bigint "responder_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["requester_id"], name: "index_connections_on_requester_id"
     t.index ["responder_id"], name: "index_connections_on_responder_id"
+    t.index ["user_id"], name: "index_connections_on_user_id"
   end
 
   create_table "media", force: :cascade do |t|
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2018_08_30_195715) do
     t.bigint "receiver_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "body"
     t.index ["connection_id"], name: "index_messages_on_connection_id"
     t.index ["receiver_id"], name: "index_messages_on_receiver_id"
     t.index ["sender_id"], name: "index_messages_on_sender_id"
@@ -101,7 +102,7 @@ ActiveRecord::Schema.define(version: 2018_08_30_195715) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "connections", "users", column: "requester_id"
+  add_foreign_key "connections", "users"
   add_foreign_key "connections", "users", column: "responder_id"
   add_foreign_key "media", "users"
   add_foreign_key "messages", "connections"

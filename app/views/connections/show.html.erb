@@ -1,0 +1,14 @@
+<% if @connection.messages.length > 1 %>
+<div id="messages">
+  <%= render @connection.messages %>
+</div>
+<%  else  %>
+<h1>No messages, send one to request a conversation</h1>
+<% end %>
+
+<%= form_for @message do |f| %>
+  <div class="form-group">
+    <%= f.text_field :body, autofocus: true, class: 'form-control' %>
+  </div>
+  <%= f.submit "Send!", class: 'btn btn-primary' %>
+<% end %>

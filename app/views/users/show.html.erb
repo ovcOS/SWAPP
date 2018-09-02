@@ -57,5 +57,11 @@
 
 
 <div class='btn-container'>
-  <button class='btn-profile'>CHAT WITH <%= @user.name.upcase %></button>
+  <%= form_for @connection do |f| %>
+  <div class="form-group">
+    <%= f.hidden_field :requester, value: current_user.id %>
+    <%= f.hidden_field :responder, value: @user.id %>
+  </div>
+  <%= f.submit "CHAT WITH #{@user.name.upcase}", class: 'btn-profile' %>
+  <% end %>
 </div>

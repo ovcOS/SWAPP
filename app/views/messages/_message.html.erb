@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-block">
+    <div class="row">
+      <div class="col-md-1">
+        <%= message.user.profile_photo_url %>
+      </div>
+      <div class="col-md-11">
+        <p class="card-text">
+          <span class="text-muted"><%= message.user.name %> at <%= message.created_at.strftime('%H:%M:%S %d %B %Y') %> says</span><br>
+          <%= message.body %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
