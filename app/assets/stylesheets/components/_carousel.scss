@@ -19,3 +19,7 @@
   width:10px;
   margin-bottom:1px;
 }
+
+.item.active {
+  transition: ease 1s;
+}
