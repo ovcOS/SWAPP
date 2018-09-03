@@ -31,19 +31,21 @@
         <p class="description" value="text"> <%= @user.description %>
         </p>
         <h3>SKILLS</h3>
-        <ul>
+        <div class="bubble-box">
           <% @user.skills.each do |skill| %>
-            <li><%= skill.name.titleize %></li>
+            <div class="bubble">
+              <%= skill.name.titleize %>
+            </div>
           <% end %>
-
-        </ul>
+        </div>
         <h3>INTERESTS</h3>
-        <ul>
+        <div class="bubble-box">
           <% @user.tags.each do |tag| %>
-            <li><%= tag.name.titleize %></li>
+            <div class="bubble">
+              <%= tag.name.titleize %>
+            </div>
           <% end %>
-
-        </ul>
+        </div>
       </div>
       <div id="media-content" class="show-content">
         <h3><%= @user.name.upcase %> IN ACTION...</h3>

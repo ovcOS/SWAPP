@@ -3,6 +3,7 @@
   padding: 0 10px 30px 10px;
   margin-top: 30px;
   text-align:center;
+  transition: ease 1s;
 }
 /* indicator position */
 #quote-carousel .carousel-indicators {
@@ -19,3 +20,33 @@
   width:10px;
   margin-bottom:1px;
 }
+
+.carousel-fade {
+    .carousel-inner {
+        .item {
+          transition-property: opacity;
+        }
+
+        .item,
+        .active.left,
+        .active.right {
+            opacity: 0;
+        }
+
+        .active,
+        .next.left,
+        .prev.right {
+            opacity: 1;
+        }
+
+        .next,
+        .prev,
+        .active.left,
+        .active.right {
+            left: 0;
+            transform: translate3d(0px, 0px, 0px);
+        }
+    }
+}
+
+
