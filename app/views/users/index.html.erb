@@ -6,7 +6,7 @@
     <div class="col-xs-12">
       <div class="market">
         <h2 class="market__title">Users that <strong>match</strong> your interests</h2>
-        <div id="search-bar">
+        <div class="search-bar">
           <%= form_tag users_path, method: :get do %>
             <%= text_field_tag :query,
             params[:query], class: "search-bar__custom",
@@ -22,7 +22,7 @@
         <% end %>
         <% @users.each do |user| %>
           <%= link_to user_path(user) do %>
-            <div id="card">
+            <div class="card">
               <%= image_tag(user.profile_photo_url, class: "card__profile-photo") %>
               <div class="card__info">
                 <h4><strong><%= user.name.upcase %></strong></h4>
