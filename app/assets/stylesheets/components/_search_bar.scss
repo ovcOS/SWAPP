@@ -3,23 +3,29 @@
     margin: 20px 0px 15px 0px;
 
   .search-bar__custom {
-    font-size: 13px;
+    font-size: 15px;
     height: 40px;
     width: 100%;
     background-color: transparent;
-    border: 1px solid lightgray;
-    border-radius: 2px;
-    color: $gunmetal;
+    color: white;
     padding-left: 35px;
     font-family: $body-font;
+    border: 0px;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 20px;
+
+    &::placeholder {
+      color: white;
+      opacity: 0.6;
+    }
   }
 
   .search-bar__icon {
     position:absolute;
-    bottom: 12px;
+    bottom: 30px;
     left: 11px;
     z-index: 1;
     font-size: 15px;
-    color: $gunmetal;
+    color: white;
   }
 }

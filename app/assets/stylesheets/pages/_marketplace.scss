@@ -1,33 +1,10 @@
-#market {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 67vh;
-  overflow: scroll;
+.market {
 }
 
-.market__background {
-  background: white;
-}
-
-.market__deco {
-  width: 100%;
-  height: 8px;
-  background-image: linear-gradient(150deg, #3023AE 0%, #C86DD7 100%);
-}
-
-.market__top {
-  background: white;
-  padding: 5px 15px 10px 15px;
-  border-bottom: 0.2px solid lightgray;
-}
-
-.market__button {
-  position: sticky;
-  bottom: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.market__title {
+  text-align: center;
+  color: white;
+  padding: 20px 0px 5px 0px;
 }
 
 #card {
@@ -40,6 +17,7 @@
   box-shadow: 1px 1px 10px #9B9B9B;
   color: $gunmetal;
   letter-spacing: $space-out;
+  background: white;
 
   .card__profile-photo {
     width: 150px;
@@ -74,7 +52,7 @@
   .card__icon {
     position: absolute;
     left: 5px;
-    opacity: 0.5;
+    opacity: 0.3;
 
   }
 }
