@@ -4,10 +4,6 @@ class Message < ApplicationRecord
   validates :body, presence: true, length: { in: 1..240 }
   after_create :broadcast_message
 
-  def from?(some_user)
-    user == some_user
-  end
-
   def broadcast_message
     ActionCable.server.broadcast("connection_#{connection.id}", {
       message_partial: ApplicationController.renderer.render(

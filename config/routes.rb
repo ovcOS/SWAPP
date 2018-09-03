@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "registrations" }
   root to: 'pages#home'
 
-  resources :connections, only: %i[new create show index]
+  resources :connections, only: %i[new create show index] do
+    resources :messages, only: %i[create]
+  end
   resources :users, except: %i[new create]
   resources :media, except: %i[edit update index]
   resources :messages, only: %i[create]
