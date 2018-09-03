@@ -27,22 +27,39 @@
             <h3><strong>SUGGESTIONS FOR YOU</strong></h3>
           <% end %>
           <% @users.each do |user| %>
-             <%= link_to user_path(user) do %>
-               <div id="card">
-                 <div class="card__profile">
-                   <%= image_tag(user.profile_photo_url, class: "card__profile-photo") %>
-                   <div class="card__profile-info">
-                     <h2><%= user.name.titleize %></h2>
-                     <h4><%= user.location %></h4>
-                   </div>
-                   <div class="card__profile-deco"></div>
+            <%= link_to user_path(user) do %>
+
+
+              <div id="card">
+
+                <%= image_tag(user.profile_photo_url, class: "card__profile-photo") %>
+
+                <div class="card__info">
+                  <h4><strong><%= user.name.upcase %></strong></h4>
+
+                    <h5 class="card__ability"><span class="card__icon fas fa-star"></span>SKILLS</h5>
+                    <div class="bubble-box">
+                      <% user.skills.each do |skill| %>
+                        <div class="bubble">
+                        <%= skill.name.titleize %>
+                        </div>
+                      <% end %>
+                    </div>
+
+                    <h5 class="card__ability"><span class="card__icon fas fa-tag"></span>INTERESTS</h5>
+                    <div class="bubble-box">
+                      <% user.tags.each do |tag| %>
+                        <div class="bubble">
+                          <%= tag.name.titleize %>
+                        </div>
+                      <% end %>
+                    </div>
                  </div>
-                 <div class="card__skills">
-                   <p><strong>Skills</strong>: <%= user.skill_names %></p>
-                   <p><strong>Interested in</strong>: <%= user.tag_names %></p>
-                 </div>
-               </div>
-             <% end %>
+
+              </div>
+
+
+            <% end %>
           <% end %>
           <% unless @user.completed_profile? %>
             <form class="market__button" action="<%= profile_path  %>">
