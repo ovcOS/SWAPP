@@ -1,0 +1,22 @@
+.chats {}
+
+.chat {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chat__left {
+  flex: 0;
+
+}
+
+.chat__info {
+
+}
+
+.chat__actions {
+  flex: 1;
+}
+
