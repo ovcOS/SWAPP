@@ -1,0 +1,51 @@
+#card {
+  margin: 0px 4px 15px 4px;
+  padding: 15px 8px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 1px 1px 10px #9B9B9B;
+  color: $gunmetal;
+  letter-spacing: $space-out;
+  background: $ghost-white;
+
+  .card__profile-photo {
+    width: 150px;
+    flex: 0 0 150px;
+    object-fit: cover;
+    max-height: 250px;
+  }
+
+  .card__info {
+    margin-left: 8px;
+    color: $gunmetal;
+
+    .bubble-box {
+    }
+
+    .bubble {
+      font-size: $h6;
+      font-weight: normal;
+      padding: 4px 8px;
+      margin: -4px 4px 7px 0px;
+      border: 1px solid $light-gray;
+    }
+  }
+
+  .card__ability {
+    position: relative;
+    font-weight: $normal;
+    padding-left: 30px;
+    margin-top: 20px;
+  }
+
+  .card__icon {
+    position: absolute;
+    left: 5px;
+    opacity: 0.3;
+
+  }
+}
+
+

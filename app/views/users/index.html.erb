@@ -14,7 +14,6 @@
             <span class="fas fa-search search-bar__icon"></span>
           <% end %>
         </div>
-
         <% if @users.empty? %>
           <div class="market__not-found text-center">
           <br>
@@ -22,34 +21,30 @@
           </div>
         <% end %>
         <% @users.each do |user| %>
-        <%= link_to user_path(user) do %>
-          <div id="card">
-
-            <%= image_tag(user.profile_photo_url, class: "card__profile-photo") %>
-
-            <div class="card__info">
-              <h4><strong><%= user.name.upcase %></strong></h4>
-
-              <h5 class="card__ability"><span class="card__icon fas fa-star"></span>SKILLS</h5>
-              <div class="bubble-box">
-                <% user.skills.each do |skill| %>
-                <div class="bubble">
-                  <%= skill.name.titleize %>
+          <%= link_to user_path(user) do %>
+            <div id="card">
+              <%= image_tag(user.profile_photo_url, class: "card__profile-photo") %>
+              <div class="card__info">
+                <h4><strong><%= user.name.upcase %></strong></h4>
+                <h5 class="card__ability"><span class="card__icon fas fa-star"></span>SKILLS</h5>
+                <div class="bubble-box">
+                  <% user.skills.each do |skill| %>
+                    <div class="bubble">
+                      <%= skill.name.titleize %>
+                    </div>
+                  <% end %>
                 </div>
-                <% end %>
-              </div>
-
-              <h5 class="card__ability"><span class="card__icon fas fa-tag"></span>INTERESTS</h5>
-              <div class="bubble-box">
-                <% user.tags.each do |tag| %>
-                <div class="bubble">
-                  <%= tag.name.titleize %>
+                <h5 class="card__ability"><span class="card__icon fas fa-tag"></span>INTERESTS</h5>
+                <div class="bubble-box">
+                  <% user.tags.each do |tag| %>
+                    <div class="bubble">
+                      <%= tag.name.titleize %>
+                    </div>
+                  <% end %>
                 </div>
-                <% end %>
               </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
         <% end %>
       </div>
     </div>

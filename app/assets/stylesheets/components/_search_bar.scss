@@ -3,11 +3,11 @@
     margin: 20px 0px 15px 0px;
 
   .search-bar__custom {
-    font-size: 15px;
+    font-size: $p;
     height: 40px;
     width: 100%;
     background-color: transparent;
-    color: white;
+    color: $ghost-white;
     padding-left: 35px;
     font-family: $body-font;
     border: 0px;
@@ -15,7 +15,7 @@
     margin-bottom: 20px;
 
     &::placeholder {
-      color: white;
+      color: $ghost-white;
       opacity: 0.6;
     }
   }
@@ -26,6 +26,6 @@
     left: 11px;
     z-index: 1;
     font-size: 15px;
-    color: white;
+    color: $ghost-white;
   }
 }
