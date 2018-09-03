@@ -1,7 +1,7 @@
-class MessagesController
+class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
-    @connection = Connection.find(params[:conection_id])
+    @connection = Connection.find(params[:message]["connection_id"].to_i)
     @message.connection = @connection
     @message.user = current_user
     if @message.save

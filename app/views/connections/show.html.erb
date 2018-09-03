@@ -14,12 +14,19 @@
         <% end  %>
       </div>
       <div id="create-message"></div>
-        <% simple_form_for (@message), remote: true do |f| %>
-          <%= f.input :body, label: false %>
-          <%= f.submit :submit, "submit" %>
+        <%= simple_form_for @message, remote: true do |f| %>
+          <%= f.hidden_field :connection_id, :value => @connection.id %>
+          <%= f.input :body, label: false  %>
         <% end  %>
       </div>
   </div>
 </div>
-
+<% content_for :after_js do %>
+  <script>
+    App['connection_<%= @connection.id %>'] = App.cable.subscriptions.create(
+      { channel: 'ConnectionsChannel', connection_id: <%= @connection.id %> },
+      { received: (data) => console.log(data) }
+    })
+  </script>
+<% end %>
 
