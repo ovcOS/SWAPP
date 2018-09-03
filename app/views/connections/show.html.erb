@@ -14,7 +14,10 @@
         <% end  %>
       </div>
       <div id="create-message"></div>
-
+        <% simple_form_for (@message), remote: true do |f| %>
+          <%= f.input :body, label: false %>
+          <%= f.submit :submit, "submit" %>
+        <% end  %>
       </div>
   </div>
 </div>

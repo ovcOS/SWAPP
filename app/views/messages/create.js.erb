@@ -1,0 +1,10 @@
+<% if @message.errors.any? %>
+
+<% else %>
+const messagesContainer = document.querySelector(".message");
+messagesContainer.insertInnerHTML( "before_end", "<% j render 'message', message: @message %>" )
+const input = document.querySelector("#message_content")
+input.value = ''
+input.blur();
+<% end %>
+

@@ -5,6 +5,7 @@ class ConnectionsController < ApplicationController
 
   def show
     @connection = Connection.find(params[:id])
+    @message = Message.new
   end
 
   def create
