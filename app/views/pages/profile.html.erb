@@ -9,7 +9,7 @@
         <div class='col-xs-12 col-md-12'>
           <div class='profile-banner__container__content'>
             <% unless @user.profile_photo_url.nil? %>
-              <%= image_tag @user.profile_photo_url, class: 'avatar'  %></p>
+              <%= image_tag @user.profile_photo_url, class: 'avatar'  %>
             <% end %>
             <h2><%= @user.name.titleize %></h2>
             <p><%= @user.location %></p>
