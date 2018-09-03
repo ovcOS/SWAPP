@@ -5,7 +5,9 @@
 }
 
 .home__logo {
-  padding: 61px 0px;
+  padding: 0px 0px 25px 0px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .home__header {
@@ -30,8 +32,21 @@
 
 .button__top {
   font-family: $headers-font;
-  margin-top: 53px;
+  margin-top: 43px;
   margin-bottom: 10px;
+}
+
+.home__member {
+  font-weight: $light;
+  font-size: 12px !important;
+  font-family: $body-font;
+  margin-top: 20px;
+  color: white;
+  .home__btn__signup {
+    color: white;
+    font-weight: $bold;
+    padding-left: 2px;
+  }
 }
 
 
