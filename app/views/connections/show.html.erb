@@ -1,14 +1,22 @@
-<% if @connection.messages.length > 1 %>
-<div id="messages">
-  <%= render @connection.messages %>
-</div>
-<%  else  %>
-<h1>No messages, send one to request a conversation</h1>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div class="chat-header">
+        <% if current_user.id == @connection.requester.id %>
+          <h4><%= @connection.responder.name %></h4>
+        <% else %>
+          <h4><%= @connection.requester.name %></h4>
+        <% end %>
+      </div>
+      <div class="messages">
+        <% @connection.messages.each do |message| %>
+          <%= render "messages/message", message: message %>
+        <% end  %>
+      </div>
+      <div id="create-message"></div>
 
-<%= form_for @message do |f| %>
-  <div class="form-group">
-    <%= f.text_field :body, autofocus: true, class: 'form-control' %>
+      </div>
   </div>
-  <%= f.submit "Send!", class: 'btn btn-primary' %>
-<% end %>
+</div>
+
+

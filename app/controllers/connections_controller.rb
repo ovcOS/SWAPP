@@ -1,22 +1,18 @@
 class ConnectionsController < ApplicationController
   def index
-    @connections = Connection.where(:responder => current_user).or(Connection.where(:requester => current_user))
+    @connections = current_user.all_connections
   end
 
   def show
-  @connection = Connection.includes(:messages).find_by(id: params[:id])
+    @connection = Connection.find(params[:id])
   end
 
   def create
     @connection = Connection.new
-    connection_params
-    requester = params[:connection][:requester].to_i
-    responder = params[:connection][:responder].to_i
-    @connection.requester = User.find(requester)
-    @connection.responder = User.find(responder)
+    @connection.requester = current_user
+    @connection.responder = User.find(connection_params[:responder_id].to_i)
     if @connection.save
-      flash[:success] = 'Chat added!'
-      redirect_to connections_path
+      redirect_to connection_path(@connection)
     else
       render 'new'
     end
@@ -25,7 +21,7 @@ class ConnectionsController < ApplicationController
   private
 
   def connection_params
-    params.require(:connection).permit(:requester, :responder)
+    params.require(:connection).permit(:responder_id)
   end
 end
 
