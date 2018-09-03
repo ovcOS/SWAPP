@@ -25,7 +25,7 @@
   <script>
     App["connection_<%= @connection.id %>"] = App.cable.subscriptions.create(
       { channel: 'ConnectionsChannel', connection_id: <%= @connection.id %> },
-      { received: (data) => { console.log(data); }
+      { received: (data) => { console.log(data) }
     })
   </script>
 <% end %>
