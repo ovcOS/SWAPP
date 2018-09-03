@@ -61,6 +61,12 @@
   margin-bottom: 10px;
 }
 
+.profile-banner__container__content {
+  .avatar {
+    margin-top: 25px;
+  }
+}
+
 #user_profile_photo {
   font-family: $body-font;
   color: $gunmetal;
