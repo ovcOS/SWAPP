@@ -1,4 +1,4 @@
-<div class="message <%= true ? 'right' : '' %>">
+<div class="message <%= user_is_messages_author ? 'right' : '' %>">
    <%= image_tag message.user.profile_photo_url, class: 'avatar' %>
   <div class="message-content"> <%= message.body %></div>
 </div>

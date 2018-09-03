@@ -5,8 +5,6 @@ class MessagesController < ApplicationController
     @message.connection = @connection
     @message.user = current_user
     if @message.save
-      ActionCable.server.broadcast("connection_#{@connection.id}", { message_partial: render(partial: "messages/message", locals: { message: @message })
-      })
       respond_to do |format|
         format.html { redirect_to connection_path(@connection) }
         format.js
