@@ -1,0 +1,19 @@
+.rounded_banner {
+  margin: 0px;
+  position: relative;
+  width: 100%; height: 37.2vh;
+  overflow: hidden;
+}
+
+.rounded_banner:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -25%;
+  bottom: 4px;
+  width: 150%;
+  background-image: linear-gradient(250deg, rgba(165, 67, 219, 100), rgba(73, 110, 225, 100));
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+  z-index: -1;
+}
