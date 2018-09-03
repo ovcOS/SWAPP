@@ -4,7 +4,7 @@ class ConnectionsController < ApplicationController
   end
 
   def show
-    @connection = Connection.find(params[:id])
+    @connection = Connection.includes(messages: :user).find(params[:id])
     @message = Message.new
   end
 

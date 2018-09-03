@@ -23,9 +23,9 @@
 </div>
 <% content_for :after_js do %>
   <script>
-    App['connection_<%= @connection.id %>'] = App.cable.subscriptions.create(
+    App["connection_<%= @connection.id %>"] = App.cable.subscriptions.create(
       { channel: 'ConnectionsChannel', connection_id: <%= @connection.id %> },
-      { received: (data) => console.log(data) }
+      { received: (data) => { console.log(data); }
     })
   </script>
 <% end %>
