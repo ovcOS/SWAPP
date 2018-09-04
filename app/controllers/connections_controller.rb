@@ -19,6 +19,11 @@ class ConnectionsController < ApplicationController
     end
   end
 
+  def destroy
+    connection = Connection.find(params[:id])
+    connection.destroy
+  end
+
   private
 
   def connection_params
