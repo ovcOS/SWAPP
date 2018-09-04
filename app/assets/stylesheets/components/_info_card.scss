@@ -1,7 +1,7 @@
 .info_card {
   background-color: white;
   font-size: $h3;
-  font-style: helvetica;
+  font-style: font-style: $body-font;
   box-shadow: .2px .2px 4px;
   min-height: 150px;
   border-radius: 3px;
@@ -36,7 +36,6 @@
   color: $gunmetal;
   opacity: .93;
   letter-spacing: .58px;
-
 }
 
 .info_card__icon_pencil {
@@ -48,8 +47,7 @@
   padding: 15px 15px;
     p {
       line-height: 40px;
-      font-style: $body-font;
-      opacity: .95;
+      opacity: .93;
   }
 }
 
