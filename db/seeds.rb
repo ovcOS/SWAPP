@@ -2,7 +2,7 @@ require 'open-uri'
 
 puts "Seeding tags"
 tags = {
-          name: %w(music performing_arts visual_arts fitness_wellness languages sports water_sports ball_sports snow_sports extreme_sports martial_arts crafting technology beauty house_care animal_care science engineering humanities cuisine earth_sciences)
+          name: %w(music performing_arts visual_arts fitness_wellness languages sports water_sports ball_sports snow_sports extreme_sports martial_arts crafting technology beauty house_care animal_care science humanities cuisine earth_sciences social_sciences)
       }
 
 # generate tags
@@ -42,11 +42,11 @@ skills = {
 
           animal_care: %w(veterinary pet-training dog-training cat-training exotic-animal-care),
 
-          science: %w(chemistry physics mathematics astronomy biology biochemistry pharmacology medicine physiotherapy botany psychology geology ecology oceanography zoology human-biology botany social-science computer-science data-science veterinary engineering),
+          science: %w(chemistry physics mathematics astronomy biology biochemistry pharmacology medicine physiotherapy botany psychology geology ecology oceanography zoology human-biology social-science computer-science data-science veterinary),
 
           earth_sciences: %w(ecology geology oceanography zoology human-biology botany),
 
-          technology: %w(programming computer-science robotics engineering data-science),
+          technology: %w(programming computer-science robotics data-science),
 
           social_sciences: %w(anthropology communication economics education political-science psychology sociology),
 
@@ -63,8 +63,8 @@ skills.each do |tag_name, skill_names|
     else
       skill = Skill.create(name: skill_name)
     end
-    tag = Tag.where(name: tag_name)
-    skill.tags << tag
+    tag = Tag.where(name: tag_name).first
+    skill.tags << tag unless skill.tags.include? tag
   end
 end
 
