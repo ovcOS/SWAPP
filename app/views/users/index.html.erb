@@ -1,10 +1,10 @@
 <%= render 'shared/navbar' %>
 <div class="rounded_banner"></div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="market">
+<div class="market">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
         <h2 class="market__title">Users that <strong>match</strong> your interests</h2>
         <div class="search-bar">
           <%= form_tag users_path, method: :get do %>
@@ -25,7 +25,15 @@
             <div class="card">
               <%= image_tag(user.profile_photo_url, class: "card__profile-photo") %>
               <div class="card__info">
-                <h4><strong><%= user.name.upcase %></strong></h4>
+                <h3>
+                  <% user.name.split.map(&:upcase).each_with_index do |name_part, i| %>
+                    <% if i == 0 %>
+                      <strong><%= name_part %></strong>
+                    <% else %>
+                      <%= name_part %>
+                    <% end %>
+                  <% end %>
+                </h3>
                 <h5 class="card__ability"><span class="card__icon fas fa-star"></span>SKILLS</h5>
                 <div class="bubble-box">
                   <% user.skills.each do |skill| %>
@@ -34,9 +42,9 @@
                     </div>
                   <% end %>
                 </div>
-                <h5 class="card__ability"><span class="card__icon fas fa-tag"></span>INTERESTS</h5>
+                <h5 class="card__ability"><span class="card__icon fas fa-tag"></span>INTERESTED IN</h5>
                 <div class="bubble-box">
-                  <% user.tags.each do |tag| %>
+                  <% user.tags.limit(4).each do |tag| %>
                     <div class="bubble">
                       <%= tag.name.titleize %>
                     </div>

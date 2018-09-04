@@ -1,4 +1,5 @@
 class ConnectionsController < ApplicationController
+  include ActionView::Helpers::DateHelper
   def index
     @connections = current_user.all_connections
   end
@@ -16,6 +17,16 @@ class ConnectionsController < ApplicationController
       redirect_to connection_path(@connection)
     else
       render 'new'
+    end
+  end
+
+  def destroy
+    @connection = Connection.find(params[:id])
+    @connection.destroy
+
+    respond_to do |format|
+      format.html {redirect_to connections_path}
+      format.js
     end
   end
 

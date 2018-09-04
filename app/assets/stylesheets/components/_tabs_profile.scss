@@ -1,31 +1,30 @@
 .tabs {
-  width: 230px;
+  height: 28px;
+  padding-left: 15px;
+  padding-right: 15px;
   margin: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-bottom: 0px;
+
 }
 
 .btn-tabs.active {
+
   font-family: $headers-font;
-  font-weight: $bold;
   font-size: $h4;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 3px solid white;
-  background-color: transparent;
-  width: 100px;
+  color: $ocean-blue;
+  border: none;
+  background-color: $ghost-white;
+  opacity: 0.9;
+  width: 165px;
 }
 
 .btn-tabs {
+  color: $gunmetal;
   font-family: $headers-font;
-  font-weight: $bold;
   font-size: $h4;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 3px solid transparent;
-  background-color: transparent;
-  width: 100px;
+  border: none;
+  background-color: $ghost-white;
+  width: 165px;
 }

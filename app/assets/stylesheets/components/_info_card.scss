@@ -1,0 +1,94 @@
+.info_card {
+  background-color: white;
+  font-size: $h3;
+  box-shadow: .2px .2px 4px;
+  min-height: 150px;
+  border-radius: 3px;
+
+  p {
+    margin: 0px;
+  }
+
+  #medium_path {
+    max-width: 90%;
+    font-size: 15px;
+    padding-left: 15px;
+  }
+
+  #media_button {
+  margin-left: 15px;
+  }
+}
+
+.info_card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info_card__title {
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+  padding-top: 20px;
+  font-size: 30px;
+}
+
+.info_card__icon_tabs {
+  padding-right: 12px;
+}
+
+.info_card__title_main {
+  font-size: 50px;
+  margin: 0px;
+  // font-weight: $bold;
+  font-style: $headers-font;
+  color: $gunmetal;
+  opacity: .93;
+  letter-spacing: .58px;
+}
+
+.info_card__icon_pencil {
+  padding-right: 20px;
+  padding-top: 10px;
+}
+
+.info_card__body {
+  padding: 15px 15px;
+    p {
+      line-height: 40px;
+      opacity: .93;
+  }
+}
+
+
+
+
+
+// <div class="container">
+//   <div class="row">
+// //     <div class="col-xs-12">
+//       <div class="info_card">
+//         <div class="info_card__header">
+//           <div class="info_card__title">
+//             <%= image_tag "about.svg", class: "info_card__icon_tabs" %>
+//             <h3 class="info_card__title_main">ABOUT</h3>
+//           </div>
+//           <div class="info_card__icon_pencil">
+//             <%= image_tag "pencil.svg", id: "btn-update-about" %>
+//           </div>
+//         </div>
+//         <div class="info_card__body">
+//           <p class="description"> <%= @user.description %>
+//           </p>
+//           <div class="form-update">
+//             <%= minimal_form_for @user do |f| %>
+//               <%= f.input :description, input_html: { :style=> 'height: 200px;', :rows => 10} %>
+//               <%= f.button :submit, 'Submit' %>
+//             <% end %>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   </div>
+// </div>

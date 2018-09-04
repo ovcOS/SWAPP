@@ -1,52 +1,40 @@
-.profile-banner {
-  min-height: 35vh;
+.profile__header {
   display: flex;
-  justify-content: center;
   align-items: center;
-  background-size: cover;
-  position: relative;
-}
-
-.profile-banner__background {
-  background-image: linear-gradient(150deg, rgba(48, 35, 174, .85) 0%, rgba(200, 109, 115, .95) 100%);
-  width: 100%;
-  max-height: 100%;
-  position: relative;
-  max-height: 35vh;
-  object-fit: cover;
-  overflow: hidden;
-
-  img {
-    position: relative;
-    z-index: -1;
-    object-fit: cover;
-    width: 100%;
-    max-height: 35vh;
-    filter: blur(5px);
-  }
-}
-
-.profile-banner__container {
-  position: absolute;
-  bottom: 0px;
+  justify-content: center;
+  margin-top: 18px;
+  margin-bottom: 22px;
   color: white;
 }
 
-.profile-banner__container__content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.profile__header_content {
+  padding-left: 25px;
+}
 
-  h2 {
-    margin-top: 0px;
-    font-size: $h2;
-    font-family: $headers-font;
-  }
-
-  p {
-    font-weight: $light;
-    font-size: $p;
-  }
+.profile__header_name {
+  font-size: $h2;
+  margin: 0px;
+  margin-bottom: 10px;
+  font-weight: $bold;
 
 }
+
+.profile__header_location {
+  font-size: $h4;
+  margin: 0px;
+  font-weight: lighter;
+}
+
+
+      // <div class="profile__header">
+      //   <div class="profile__header_avatar">
+      //     <% unless @user.profile_photo_url.nil? %>
+      //     <%= image_tag @user.profile_photo_url, class: 'avatar'  %>
+      //     <% end %>
+      //   </div>
+      //   <div class="profile__header_content">
+      //     <h3 class="profile__header_name"><%= @user.name.titleize %></h3>
+      //     <h4 class="profile__header_location"><%= @user.location %></h4>
+      //   </div>
+      // </div>
+
