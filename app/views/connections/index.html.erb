@@ -1,37 +1,41 @@
 <%= render 'shared/navbar' %>
-<div class="small_banner connections__header">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <h1>Messages</h1>
-      </div>
-    </div>
-  </div>
+<div class="small_banner">
+  <h2>Messages</h2>
 </div>
-
-<% if @connections.length < 1 %>
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <div class="connections__body">
-        <h2>No messages. <strong>Yet...</strong></h2>
-        <p>Explore SWAPP to find people with whom to share your skills. Once you start chatting, your conversations will be stored here.</p>
-        <form action="<%= users_path %>">
-          <button class="button-small">Explore SWAPP</button>
-        </form>
-      </div>
+      <% if @connections.empty? %>
+        <div class="connections__body">
+          <h2>No messages. <strong>Yet...</strong></h2>
+          <p>Explore SWAPP to find people with whom to share your skills. Once you start chatting, your conversations will be stored here.</p>
+          <form action="<%= users_path %>">
+            <button class="button-small">Explore SWAPP</button>
+          </form>
+        </div>
+      <% else %>
+        <div class="chats">
+          <% @connections.each do |connection| %>
+            <% user = connection.requester == current_user ? connection.responder : connection.requester %>
+            <div id="chat-<%= connection.id %>" class="chat">
+              <%= link_to connection_path(connection), class:'chat__left' do %>
+                <div class="chat__image">
+                  <%= image_tag(user.profile_photo_url, class:'avatar avatar--sm') %>
+                </div>
+                <div class="chat__info">
+                  <h5><%= user.name.titleize %></h5>
+                  <div class='chat__small_text'>
+                    <h6><%= connection.messages.empty? ? 'Sent them a message!' : "#{time_ago_in_words(connection.messages.last.created_at)} ago" %></h6>
+                  </div>
+                </div>
+              <% end %>
+              <%= link_to connection_path(connection), method: :delete, id:connection.id, class:'chat__actions', data: {confirm: "Are you sure?"}, remote: true do %>
+                <i class="fas fa-times"></i>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
-</div> -->
-<% else %>
-<ul>
-  <% @connections.each do |connection| %>
-    <%= link_to connection_path(connection) do %>
-      <li>Chat with <%= connection.responder.name  %> <%= connection.id %></li>
-    <% end %>
-  <% end %>
-</ul>
-<% end %>
-
-
-
+</div>
