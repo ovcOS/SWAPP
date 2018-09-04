@@ -25,7 +25,15 @@
             <div class="card">
               <%= image_tag(user.profile_photo_url, class: "card__profile-photo") %>
               <div class="card__info">
-                <h3><strong><%= user.name.split.first.upcase%></strong> <%= user.name.split.second.upcase %></h3>
+                <h3>
+                  <% user.name.split.map(&:upcase).each_with_index do |name_part, i| %>
+                    <% if i == 0 %>
+                      <strong><%= name_part %></strong>
+                    <% else %>
+                      <%= name_part %>
+                    <% end %>
+                  <% end %>
+                </h3>
                 <h5 class="card__ability"><span class="card__icon fas fa-star"></span>SKILLS</h5>
                 <div class="bubble-box">
                   <% user.skills.each do |skill| %>
