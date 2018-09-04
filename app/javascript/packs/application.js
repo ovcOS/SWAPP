@@ -13,3 +13,4 @@ import { inPageUpdate } from "../components/update.js";
 inPageUpdate();
 import { slider } from "../components/slider.js"
 slider();
+

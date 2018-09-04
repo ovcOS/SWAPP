@@ -59,5 +59,16 @@
 
 
 <div class='btn-container'>
-  <button class='btn-profile'>CHAT WITH <%= @user.name.upcase %></button>
+  <% if @connection.id.nil? %>
+    <%= form_for @connection do |f| %>
+    <div class="form-group">
+      <%= f.hidden_field :responder_id, value: @user.id %>
+    </div>
+      <%= f.submit " WITH #{@user.name.upcase}", class: 'btn-profile' %>
+    <% end %>
+  <% else %>
+    <div class='btn-profile'>
+      <%= link_to "CHAT WITH #{@user.name.upcase}", connection_path(@connection)%>
+    </div>
+  <% end %>
 </div>

@@ -12,6 +12,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    connections = Connection.between(current_user.id, @user.id)
+    @connection = connections.empty? ? Connection.new : connections.first
   end
 
   def edit

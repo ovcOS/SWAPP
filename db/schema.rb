@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_30_195715) do
+ActiveRecord::Schema.define(version: 2018_09_03_150246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "connections", force: :cascade do |t|
     t.string "status", default: "pending"
-    t.string "request"
     t.bigint "requester_id"
     t.bigint "responder_id"
     t.datetime "created_at", null: false
@@ -37,13 +36,12 @@ ActiveRecord::Schema.define(version: 2018_08_30_195715) do
 
   create_table "messages", force: :cascade do |t|
     t.bigint "connection_id"
-    t.bigint "sender_id"
-    t.bigint "receiver_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "body"
     t.index ["connection_id"], name: "index_messages_on_connection_id"
-    t.index ["receiver_id"], name: "index_messages_on_receiver_id"
-    t.index ["sender_id"], name: "index_messages_on_sender_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "skill_users", force: :cascade do |t|
@@ -105,8 +103,7 @@ ActiveRecord::Schema.define(version: 2018_08_30_195715) do
   add_foreign_key "connections", "users", column: "responder_id"
   add_foreign_key "media", "users"
   add_foreign_key "messages", "connections"
-  add_foreign_key "messages", "users", column: "receiver_id"
-  add_foreign_key "messages", "users", column: "sender_id"
+  add_foreign_key "messages", "users"
   add_foreign_key "skill_users", "skills"
   add_foreign_key "skill_users", "users"
   add_foreign_key "tag_skills", "skills"
