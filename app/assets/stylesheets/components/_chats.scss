@@ -38,16 +38,19 @@
 }
 
 .chat__actions {
+  color: $smokey-black;
   text-align: right;
   flex: 1;
+  &:hover {
+    color: $smokey-black;
+  }
 }
-
 
 // <div class="chats">
 //   <div class="chat">
-//     <%= link_to root_path, class:'chat__left' do %>
+//     <%= link_to connection_path(CONNECTION), class:'chat__left' do %>
 //       <div class="chat__image">
-//         <%= image_tag(User.all[54].profile_photo_url, class:'avatar avatar--sm') %>
+//         <%= image_tag(@user.profile_photo_url, class:'avatar avatar--sm') %>
 //       </div>
 //       <div class="chat__info">
 //         <h5>Uri Rodgrigues</h5>
@@ -56,8 +59,8 @@
 //         </div>
 //       </div>
 //     <% end %>
-//     <div class="chat__actions">
-//       <%= link_to  %><i class="fas fa-times"></i>
-//     </div>
+//     <%= link_to connection_path(CONNECTION), method: :delete, class:'chat__actions', data: {confirm: "Are you sure?"} do %>
+//       <i class="fas fa-times"></i>
+//     <% end %>
 //   </div>
 // </div>
