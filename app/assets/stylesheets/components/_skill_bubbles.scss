@@ -7,11 +7,11 @@
 }
 
 .bubble {
-  color: $gunmetal;
-  border: 1px solid $ocean-blue;
-  border-radius: 30px;
-  padding: 5px 13px;
-  margin: 10px 10px 0px 0px;
-  font-size: $p;
-  font-weight: $light;
+  font-size: $h5;
+  font-weight: normal;
+  padding: 4px 10px;
+  margin: 0px 4px 7px 0px;
+  border: 1px solid lightgray;
+  border-radius: 40px;
+  text-align: center;
 }

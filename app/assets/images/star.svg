@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="19px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>icons/tags copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="6.66666667 0 5 5 0 5 4.16666667 8.33333333 2.5 13.3333333 6.66666667 10 10.8333333 13.3333333 9.16666667 8.33333333 13.3333333 5 8.33333333 5"></polygon>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.266685268">
+        <g id="Card" transform="translate(-123.000000, -93.000000)">
+            <g id="icons/star" transform="translate(123.000000, 93.000000)">
+                <g id="icons/dark/star" transform="translate(0.833333, 0.833333)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#212B36" fill-rule="nonzero" xlink:href="#path-1"></use>
+                    <g id="color/main" mask="url(#mask-2)" fill="#212B36">
+                        <g transform="translate(-0.833333, -0.833333)">
+                            <rect x="0" y="0" width="15" height="15" rx="4"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
