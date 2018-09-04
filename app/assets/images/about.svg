@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>icons/tags</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M8,0 C5.8,0 4,2.24 4,5 C4,7.76 5.8,10 8,10 C10.2,10 12,7.76 12,5 C12,2.24 10.2,0 8,0 Z M3.82,10 C1.7,10.1 2.22044605e-16,11.84 2.22044605e-16,14 L2.22044605e-16,16 L16,16 L16,14 C16,11.84 14.32,10.1 12.18,10 C11.1,11.22 9.62,12 8,12 C6.38,12 4.9,11.22 3.82,10 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.27">
+        <g id="Mobile-Copy-4" transform="translate(-28.000000, -190.000000)">
+            <g id="Group-2" transform="translate(27.000000, 185.000000)">
+                <g id="icons/person" transform="translate(0.000000, 4.000000)">
+                    <g id="icons/dark/person" transform="translate(1.000000, 1.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Mask" fill="#212B36" fill-rule="nonzero" xlink:href="#path-1"></use>
+                        <g id="color/main" mask="url(#mask-2)" fill="#212B36">
+                            <g transform="translate(-1.000000, -1.000000)">
+                                <rect x="0" y="0" width="18" height="18" rx="4"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

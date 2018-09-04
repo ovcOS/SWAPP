@@ -1,79 +1,107 @@
 <div id="fullpage">
   <%= form_for @user do |f| %>
-    <div class="section">
-      <div class="home_banner" style="background-image: linear-gradient(150deg, #3023AE 0%, #C86DD7 100%), url('');">
-        <div class="get_started_container container">
+    <div class="slide text-center">
+      <div class="get-started__wrapper">
+        <div class="container">
           <div class="row">
             <div class="col-xs-12">
-              <div class="additional_info_form">
-                <div class="form_inputs">
-                  <label class="button--label button--xs" for="user_profile_photo">Profile Picture</label>
+              <div class="get-started__content">
+                <label class="avatar avatar--gradient" for="user_profile_photo"><%= image_tag "default_profile.svg" %></label>
                   <%= f.file_field :profile_photo, class:'fuck-off'%>
                   <%= f.hidden_field :profile_photo_cache %>
+                <div class="get-started__one">
+                  <h4>We'll need a photo</h4>
+                  <p>Just a few more things to offer you the best user experience</p>
                 </div>
+                <button class="button fas fa-check"></button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="section">
-      <div class="home_banner" style="background-image: linear-gradient(150deg, #3023AE 0%, #C86DD7 100%), url('');">
-        <div class="get_started_container container">
+    <div class="slide text-center">
+      <div class="get-started__wrapper">
+        <div class="container">
           <div class="row">
             <div class="col-xs-12">
-              <div class="additional_info_form">
-                <div class="form_inputs">
-                  <div class="input_cont">
-                    <%= f.awesomplete_field(:skills, collection: @skill_names.join(','), placeholder:"#{@skill_names.sample}, #{@skill_names.sample}, ...", required: true) %>
+              <div class="get-started__content">
+                <div class="avatar avatar--lg avatar--gradient" for="user_profile_photo"><%= image_tag "default_profile.svg" %></div>
+                <div class="get-started__two">
+                  <h4>What are your best skills?</h4>
+                  <p>What will you want to share with other users?</p>
+                </div>
+                <div class="get-started__form"><%= f.awesomplete_field(:skills, collection: @skill_names.join(','), placeholder:"#{@skill_names.sample}, #{@skill_names.sample}, ...", required: true) %>
+                </div>
+                <button class="button fas fa-check"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide text-center">
+      <div class="get-started__wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="get-started__content">
+                <div class="avatar avatar--lg avatar--gradient" for="user_profile_photo"><%= image_tag "default_profile.svg" %></div>
+                  <div class="get-started__two">
+                    <h4>What are your interested in?</h4>
+                    <p>Tell others what you are interested in learning</p>
+                    </div>
+                    <div class="get-started__form"><%= f.awesomplete_field(:tags, collection: @tag_names.join(','), placeholder:"#{@tag_names.sample}, #{@tag_names.sample}, ...", required: true)%>
                   </div>
-                </div>
+                <button class="button fas fa-check"></button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="section">
-      <div class="home_banner" style="background-image: linear-gradient(150deg, #3023AE 0%, #C86DD7 100%), url('');">
-        <div class="get_started_container container">
+    <div class="slide text-center">
+      <div class="get-started__wrapper">
+        <div class="container">
           <div class="row">
             <div class="col-xs-12">
-              <div class="additional_info_form">
-                <div class="input_cont">
-                  <%= f.awesomplete_field(:tags, collection: @tag_names.join(','), placeholder:"#{@tag_names.sample}, #{@tag_names.sample}, ...", required: true) %>
+              <div class="get-started__content">
+                <div class="avatar avatar--lg avatar--gradient" for="user_profile_photo"><%= image_tag "default_profile.svg" %></div>
+                <div class="get-started__two">
+                  <h4>Tell us about yourself</h4>
+                  <p>Type a short description to let other users know a bit about you!</p>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-      <div class="home_banner" style="background-image: linear-gradient(150deg, #3023AE 0%, #C86DD7 100%), url('');">
-        <div class="get_started_container container">
-          <div class="row">
-            <div class="col-xs-12">
-              <div class="additional_info_form">
-                <div class="form_inputs">
+                <div class="get-started__form">
                   <div class="input_cont">
                     <%= f.text_field :description %>
                   </div>
                 </div>
+                <button class="button fas fa-check"></button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="section">
-      <div class="home_banner" style="background-image: linear-gradient(150deg, #3023AE 0%, #C86DD7 100%), url('');">
-        <div class="get_started_container container">
+    <div class="slide text-center">
+      <div class="get-started__final-wrapper">
+        <div class="container">
           <div class="row">
             <div class="col-xs-12">
-             <div class="info_form_button">
-              <%= f.submit "Continue", class:'button' %>
-             </div>
+              <div class="get-started__content">
+                <div class="checkmark--parent">
+                  <div class="checkmark--outer"> </div>
+                  <div class="checkmark--middle"> </div>
+                  <div class="checkmark--inner fas fa-check"> </div>
+                  </div>
+                  <div class="get-started__two">
+                    <h4><strong>All done!</strong></h4>
+                    <p>Tap on the button below to start exploring the SWAPP community</p>
+                  </div>
+                    <div class="info_form_button">
+                    <%= f.submit "SWAPP", class:'button' %>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -81,4 +109,3 @@
     </div>
   <% end %>
 </div>
-

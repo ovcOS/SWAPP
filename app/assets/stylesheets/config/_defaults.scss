@@ -41,3 +41,11 @@ p {
   font-size: $p !important;
   font-family: $body-font !important;
 }
+
+
+a {
+  text-decoration: none !important;
+  &:hover {
+    text-decoration: none !important;
+  }
+}

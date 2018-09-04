@@ -5,6 +5,11 @@
   border-radius: 50%;
 }
 
+.avatar--sm {
+  width: 42px;
+  height: 42px;
+}
+
 .avatar--lg {
   width: 143px;
   height: 143px;
@@ -18,5 +23,5 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(150deg, #3023AE 0%, #C86DD7 100%), url('');
+  background-image: linear-gradient(250deg, rgba(165, 67, 219, 100), rgba(73, 110, 225, 100));
 }

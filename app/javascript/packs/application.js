@@ -1,10 +1,14 @@
 import "bootstrap";
 // Awesomplete CSS
-import "awesomplete/awesomplete.css"
+import "awesomplete/awesomplete.css";
 // Awesomplete JS
+
 import "awesomplete"
 
 import {awsompleteSettings} from "../components/awesomplete_settings.js"
+
+import "awesomplete";
+import {awsompleteSettings} from "../components/awesomplete_settings.js";
 awsompleteSettings();
 import {carousel} from "../components/carousel.js";
 carousel();
@@ -16,4 +20,3 @@ import { slider } from "../components/slider.js"
 slider();
 import { fullPageSlide } from "../components/one_page_getting_started.js"
 fullPageSlide();
-
