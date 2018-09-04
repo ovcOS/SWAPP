@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div class="chat-header">
+        <% if current_user.id == @connection.requester.id %>
+          <h4><%= @connection.responder.name %></h4>
+        <% else %>
+          <h4><%= @connection.requester.name %></h4>
+        <% end %>
+      </div>
+      <div class="messages">
+        <% @connection.messages.each do |message| %>
+          <%= render "messages/message", message: message, user_is_messages_author: message.user == current_user %>
+        <% end  %>
+      </div>
+      <div id="create-message"></div>
+        <%= simple_form_for @message, remote: true do |f| %>
+          <%= f.hidden_field :connection_id, :value => @connection.id %>
+          <%= f.input :body, label: false  %>
+        <% end  %>
+      </div>
+  </div>
+</div>
+<% content_for :after_js do %>
+  <script>
+    App["connection_<%= @connection.id %>"] = App.cable.subscriptions.create(
+      { channel: 'ConnectionsChannel', connection_id: <%= @connection.id %> },
+      { received: (data) => {
+
+        if (data.current_user_id !== <%= current_user.id %>) {
+          var messagesContainer = document.querySelector(".messages");
+          messagesContainer.insertAdjacentHTML( "beforeend", data.message_partial) }
+          if (messagesContainer) {
+            scrollLastMessageIntoView();
+          }
+
+        }
+    })
+  </script>
+<% end %>
+

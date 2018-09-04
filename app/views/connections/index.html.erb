@@ -9,6 +9,7 @@
   </div>
 </div>
 
+<% if @connections.length < 1 %>
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
@@ -21,6 +22,16 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
+<% else %>
+<ul>
+  <% @connections.each do |connection| %>
+    <%= link_to connection_path(connection) do %>
+      <li>Chat with <%= connection.responder.name  %> <%= connection.id %></li>
+    <% end %>
+  <% end %>
+</ul>
+<% end %>
+
 
 

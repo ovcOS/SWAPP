@@ -1,55 +1,51 @@
 <%= render 'shared/navbar' %>
-<div class="market__deco"></div>
-<div class="market__top">
-  <div class="market__explore">
-    <h2>Explore the <strong>SWAPP</strong> community!</h2>
-  </div>
-  <div id="search-bar">
-     <%= form_tag users_path, method: :get do %>
-       <%= text_field_tag :query,
-       params[:query], class: "search-bar__custom",
-       placeholder: "Search a skill ( ex: guitar, juggling, tennis, ... )"%>
-       <span class="fas fa-search search-bar__icon"></span>
-     <% end %>
-  </div>
-</div>
-<div class="market__background">
-  <div  class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <div id="market">
-          <% if @users.empty? %>
-             <div class="market__not-found text-center">
-              <br>
-               <p>Sorry, no users with these skills found</p>
-             </div>
-          <% else %>
-            <h3><strong>SUGGESTIONS FOR YOU</strong></h3>
-          <% end %>
-          <% @users.each do |user| %>
-             <%= link_to user_path(user) do %>
-               <div id="card">
-                 <div class="card__profile">
-                   <%= image_tag(user.profile_photo_url, class: "card__profile-photo") %>
-                   <div class="card__profile-info">
-                     <h2><%= user.name.titleize %></h2>
-                     <h4><%= user.location %></h4>
-                   </div>
-                   <div class="card__profile-deco"></div>
-                 </div>
-                 <div class="card__skills">
-                   <p><strong>Skills</strong>: <%= user.skill_names %></p>
-                   <p><strong>Interested in</strong>: <%= user.tag_names %></p>
-                 </div>
-               </div>
-             <% end %>
-          <% end %>
-          <% unless @user.completed_profile? %>
-            <form class="market__button" action="<%= profile_path  %>">
-              <button class="button-small">Complete Profile</button>
-            </form>
+<div class="rounded_banner"></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="market">
+        <h2 class="market__title">Users that <strong>match</strong> your interests</h2>
+        <div class="search-bar">
+          <%= form_tag users_path, method: :get do %>
+            <%= text_field_tag :query,
+            params[:query], class: "search-bar__custom",
+            placeholder: "tap to search a skill ( ex: guitar, tennis, ... )"%>
+            <span class="fas fa-search search-bar__icon"></span>
           <% end %>
         </div>
+        <% if @users.empty? %>
+          <div class="market__not-found text-center">
+          <br>
+            <p>Sorry, no users with these skills found</p>
+          </div>
+        <% end %>
+        <% @users.each do |user| %>
+          <%= link_to user_path(user) do %>
+            <div class="card">
+              <%= image_tag(user.profile_photo_url, class: "card__profile-photo") %>
+              <div class="card__info">
+                <h4><strong><%= user.name.upcase %></strong></h4>
+                <h5 class="card__ability"><span class="card__icon fas fa-star"></span>SKILLS</h5>
+                <div class="bubble-box">
+                  <% user.skills.each do |skill| %>
+                    <div class="bubble">
+                      <%= skill.name.titleize %>
+                    </div>
+                  <% end %>
+                </div>
+                <h5 class="card__ability"><span class="card__icon fas fa-tag"></span>INTERESTS</h5>
+                <div class="bubble-box">
+                  <% user.tags.each do |tag| %>
+                    <div class="bubble">
+                      <%= tag.name.titleize %>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>
