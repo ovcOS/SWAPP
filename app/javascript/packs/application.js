@@ -4,8 +4,6 @@ import "awesomplete/awesomplete.css"
 // Awesomplete JS
 import "awesomplete"
 
-import "fullpage.js/dist/fullpage.js"
-import "fullpage.js/dist/fullpage.css"
 import {awsompleteSettings} from "../components/awesomplete_settings.js"
 awsompleteSettings();
 import {carousel} from "../components/carousel.js";
@@ -16,12 +14,6 @@ import { inPageUpdate } from "../components/update.js";
 inPageUpdate();
 import { slider } from "../components/slider.js"
 slider();
+import { fullPageSlide } from "../components/one_page_getting_started.js"
+fullPageSlide();
 
-new fullpage('#fullpage', {
-  //options here
-  autoScrolling:true,
-  scrollHorizontally: true
-});
-
-//methods
-fullpage_api.setAllowScrolling(false);
