@@ -4,7 +4,7 @@
   margin-bottom: 83px;
 
   h3 {
-    color: $ocean-blue;
+    color: $gunmetal;
     font-size: $h3;
     font-family: $headers-font;
     font-weight: $normal;
@@ -53,18 +53,14 @@
 }
 
 .media-display {
-  width: 290px;
+  align: center;
+  width: 90%;
   height: 200px;
   object-fit: cover;
-  box-shadow: 0.2px 0.2px 4px $light-gray;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.profile-banner__container__content {
-  .avatar {
-    margin-top: 25px;
-  }
+  // box-shadow: 0.2px 0.2px 4px $light-gray;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  // box-shadow: .2px .2px 4px;
 }
 
 #user_profile_photo {
@@ -72,3 +68,23 @@
   color: $gunmetal;
   text-decoration: underline;
 }
+
+.profile_card {
+  margin-top: 16px;
+}
+
+.media-title {
+  margin-top: 30px;
+    h3 {
+      color: white;
+  }
+}
+
+.media_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
