@@ -41,3 +41,23 @@
   text-align: right;
   flex: 1;
 }
+
+
+// <div class="chats">
+//   <div class="chat">
+//     <%= link_to root_path, class:'chat__left' do %>
+//       <div class="chat__image">
+//         <%= image_tag(User.all[54].profile_photo_url, class:'avatar avatar--sm') %>
+//       </div>
+//       <div class="chat__info">
+//         <h5>Uri Rodgrigues</h5>
+//         <div class='chat__small_text'>
+//           <h6>2 minutes ago</h6>
+//         </div>
+//       </div>
+//     <% end %>
+//     <div class="chat__actions">
+//       <%= link_to  %><i class="fas fa-times"></i>
+//     </div>
+//   </div>
+// </div>
