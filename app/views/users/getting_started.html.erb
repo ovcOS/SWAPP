@@ -1,33 +1,84 @@
-<div class="home_banner" style="background-image: linear-gradient(150deg, #3023AE 0%, #C86DD7 100%), url('');">
-  <div class="get_started_container container">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="header">
-          <h1>Getting Started</h1>
-          <p>Just a few more things...</p>
-        </div>
-        <%= form_for @user do |f| %>
-          <div class="additional_info_form">
-            <div class="form_inputs">
-                <label class="button--label button--xs" for="user_profile_photo">Profile Picture</label>
-                <%= f.file_field :profile_photo, class:'fuck-off'%>
-                <%= f.hidden_field :profile_photo_cache %>
-              <div class="input_cont">
-                <p>What <strong>skills</strong> can you offer? *</p>
-                <%= f.awesomplete_field(:skills, collection: @skill_names.join(','), placeholder:"#{@skill_names.sample}, #{@skill_names.sample}, ...", required: true) %>
-              </div>
-
-              <div class="input_cont">
-                <p>What are you <strong>interested</strong> in? *</p>
-                <%= f.awesomplete_field(:tags, collection: @tag_names.join(','), placeholder:"#{@tag_names.sample}, #{@tag_names.sample}, ...", required: true)%>
+<div id="fullpage">
+  <%= form_for @user do |f| %>
+    <div class="slide">
+      <div class="home_banner" style="background-image: linear-gradient(150deg, #3023AE 0%, #C86DD7 100%), url('');">
+        <div class="get_started_container container">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="additional_info_form">
+                <div class="form_inputs">
+                  <label class="button--label button--xs" for="user_profile_photo">Profile Picture</label>
+                  <%= f.file_field :profile_photo, class:'fuck-off'%>
+                  <%= f.hidden_field :profile_photo_cache %>
+                </div>
               </div>
             </div>
           </div>
-         <div class="info_form_button">
-          <%= f.submit "Continue", class:'button' %>
         </div>
-        <% end %>
       </div>
     </div>
-  </div>
+    <div class="slide">
+      <div class="home_banner" style="background-image: linear-gradient(150deg, #3023AE 0%, #C86DD7 100%), url('');">
+        <div class="get_started_container container">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="additional_info_form">
+                <div class="form_inputs">
+                  <div class="input_cont">
+                    <%= f.awesomplete_field(:skills, collection: @skill_names.join(','), placeholder:"#{@skill_names.sample}, #{@skill_names.sample}, ...", required: true) %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="home_banner" style="background-image: linear-gradient(150deg, #3023AE 0%, #C86DD7 100%), url('');">
+        <div class="get_started_container container">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="additional_info_form">
+                <div class="input_cont">
+                  <%= f.awesomplete_field(:tags, collection: @tag_names.join(','), placeholder:"#{@tag_names.sample}, #{@tag_names.sample}, ...", required: true)%>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="home_banner" style="background-image: linear-gradient(150deg, #3023AE 0%, #C86DD7 100%), url('');">
+        <div class="get_started_container container">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="additional_info_form">
+                <div class="form_inputs">
+                  <div class="input_cont">
+                    <%= f.text_field :description %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="home_banner" style="background-image: linear-gradient(150deg, #3023AE 0%, #C86DD7 100%), url('');">
+        <div class="get_started_container container">
+          <div class="row">
+            <div class="col-xs-12">
+             <div class="info_form_button">
+              <%= f.submit "Continue", class:'button' %>
+             </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
+
