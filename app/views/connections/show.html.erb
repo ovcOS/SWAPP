@@ -23,15 +23,17 @@
 </div>
 <% content_for :after_js do %>
   <script>
-    scrollLastMessageIntoView();
     App["connection_<%= @connection.id %>"] = App.cable.subscriptions.create(
       { channel: 'ConnectionsChannel', connection_id: <%= @connection.id %> },
       { received: (data) => {
-        console.log(data)
+
         if (data.current_user_id !== <%= current_user.id %>) {
           var messagesContainer = document.querySelector(".messages");
           messagesContainer.insertAdjacentHTML( "beforeend", data.message_partial) }
-          scrollLastMessageIntoView();
+          if (messagesContainer) {
+            scrollLastMessageIntoView();
+          }
+
         }
     })
   </script>
