@@ -1,4 +1,4 @@
-<div class="home_banner" style="">
+<div class="home_banner" style="background-image: linear-gradient(150deg, #A543DB 0%, #496EE1 100%), url('');">
   <div class="container text-center">
     <div class="row ">
       <div class="col-xs-12">
@@ -43,27 +43,6 @@
             </div>
           </div>
         </div>
-
-
-
-      <div class="chat">
-        <div class="chat__left">
-          <%= image_tag(User.all[54].profile_photo_url, class:'avatar avatar--sm') %>
-          <div class="chat__info">
-            <h6>Uri Rodgrigues</h6>
-            <div class='chat__small_text'>
-            </div>
-          </div>
-        </div>
-        <div class="chat__actions"></div>
-      </div>
-
-
-
-
-
-
-
         <form action="<%= new_user_registration_path %>">
           <button class="button button__top">SIGN UP</button>
         </form>
@@ -73,4 +52,3 @@
     </div>
   </div>
 </div>
-
