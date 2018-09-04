@@ -1,20 +1,27 @@
 .card {
-  margin: 0px 4px 15px 4px;
-  padding: 15px 8px;
-  display: flex;
-  flex-direction: row;
+  margin: 0px 4px 20px 4px;
+  padding: 8px 8px;
+  display: block;
   border-radius: 3px;
   overflow: hidden;
   box-shadow: 1px 1px 10px #9B9B9B;
   color: $gunmetal;
   letter-spacing: $space-out;
-  background: $ghost-white;
+  background: white;
+
+  strong {
+    color: $ocean-blue;
+  }
+
+  h3 {
+    padding-bottom: 6px;
+  }
 
   .card__profile-photo {
-    width: 150px;
-    flex: 0 0 150px;
+    width: 100%;
     object-fit: cover;
-    max-height: 250px;
+    max-height: 200px;
+    filter: grayscale(40%);
   }
 
   .card__info {
@@ -22,29 +29,31 @@
     color: $gunmetal;
 
     .bubble-box {
+      margin-left: 10px;
     }
 
     .bubble {
       font-size: $h6;
       font-weight: normal;
-      padding: 4px 8px;
-      margin: -4px 4px 7px 0px;
-      border: 1px solid $light-gray;
+      padding: 4px 10px;
+      margin: 0px 4px 7px 0px;
+      border: 1px solid lightgray;
     }
   }
 
   .card__ability {
     position: relative;
     font-weight: $normal;
-    padding-left: 30px;
-    margin-top: 20px;
+    padding: 2px 0px 0px 25px;
+    margin-top: 10px;
   }
 
   .card__icon {
     position: absolute;
-    left: 5px;
+    left: 1px;
+    top: 3px;
     opacity: 0.3;
-
+    font-size: 14px;
   }
 }
 
