@@ -5,9 +5,15 @@
   width: 150px;
   height: 60px;
   border-radius: 50px !important;
-  font-size: 13px;
   opacity: 0.95;
   border: 0px;
+  font-family: $headers-font !important;
+  font-size: $h4 !important;
+  font-weight: $bold !important;
+}
+
+.button--long {
+  width: 250px;
 }
 
 .button--label {
