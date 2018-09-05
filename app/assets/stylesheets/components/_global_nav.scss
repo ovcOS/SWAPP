@@ -1,13 +1,14 @@
 .global-nav  {
-  height: 10vh;
+  height: 8vh;
   background-color: white;
   box-shadow: 2px 2px 4px;
+  opacity: .95;
 }
 
 .global-nav__nav {
   display: flex;
   align-items: center;
-  height: 71.5px;
+  height: 50px;
 }
 .global-nav__links {
   width: 720px;
@@ -20,8 +21,8 @@
   width: 30px;
   height: 30px;
   svg {
-    width: 23px;
-    height: 23px;
+    width: 30px;
+    height: 30px;
   }
 }
 
@@ -30,7 +31,7 @@
   height: 30px;
 
   svg {
-    width: 23px;
-    height: 23px;
+    width: 30px;
+    height: 30px;
   }
 }

@@ -1,74 +1,103 @@
 <%= render 'shared/navbar' %>
-<div class="profile-banner">
-  <div class="profile-banner__background">
-    <%= image_tag @user.profile_photo_url %>
-  </div>
-  <div class="profile-banner__container">
-    <div class="container">
-      <div class='row'>
-        <div class='col-xs-12 col-md-12'>
-          <div class='profile-banner__container__content'>
+
+<div class="rounded_banner">
+</div>
+  <div class="container">
+    <div class='row'>
+      <div class='col-xs-12 col-md-12'>
+        <div class="profile__header">
+          <div class="profile__header_avatar">
             <% unless @user.profile_photo_url.nil? %>
-              <%= image_tag @user.profile_photo_url, class: 'avatar'  %></p>
+            <%= image_tag @user.profile_photo_url, class: 'avatar'  %>
             <% end %>
-            <h2><%= @user.name.titleize %></h2>
-            <p><%= @user.location %></p>
-            <div class="tabs">
-              <button id="info" class="btn-tabs active" >INFO</button>
-              <button id="media" class="btn-tabs" >MEDIA</button>
+          </div>
+          <div class="profile__header_content">
+            <h2 class="profile__header_name"><%= @user.name.titleize %></h2>
+            <h4 class="profile__header_location"><%= @user.location %></h4>
+          </div>
+        </div>
+        <div class="tabs">
+          <button id="info" class="btn-tabs active" >Information</button>
+          <button id="media" class="btn-tabs" >Media</button>
+        </div>
+        <div id="info-content"class='profile-content active'>
+          <div class="info_card profile_card">
+            <div class="info_card__header">
+              <div class="info_card__title">
+                <%= image_tag "about.svg", class: "info_card__icon_tabs" %>
+                <h3 class="info_card__title_main">ABOUT</h3>
+              </div>
+            </div>
+            <div class="info_card__body">
+              <p class="description"> <%= @user.description %></p>
+            </div>
+          </div>
+          <div class="info_card profile_card">
+            <div class="info_card__header">
+              <div class="info_card__title">
+                <%= image_tag "star.svg", class: "info_card__icon_tabs" %>
+                <h3 class="info_card__title_main">SKILLS</h3>
+              </div>
+            </div>
+            <div class="info_card__body">
+              <div class="bubble-box">
+                <% @user.skills.each do |skill| %>
+                <div class="bubble">
+                  <%= skill.name.titleize %>
+                </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="info_card profile_card">
+            <div class="info_card__header">
+              <div class="info_card__title">
+                <%= image_tag "tag.svg", class: "info_card__icon_tabs" %>
+                <h3 class="info_card__title_main">INTERESTED IN</h3>
+              </div>
+            </div>
+            <div class="info_card__body">
+              <div class="bubble-box">
+                <% @user.tags.each do |tag| %>
+                <div class="bubble">
+                  <%= tag.name.titleize %>
+                </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="media-content" class="profile-content media-title media-card">
+          <div class="info_card">
+              <div class="info_card__header">
+                <div class="info_card__title">
+                  <%= image_tag "camera.svg", class: "info_card__icon_tabs" %>
+                  <h3 class="info_card__title_main"><%= @user.name.upcase %> IN ACTION</h3>
+                </div>
+              </div>
+            <div class="media_content">
+              <% @user.media.each do |medium| %>
+              <%= image_tag medium.path_url, class: "media-display" %>
+              <% end %>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div class='container'>
-  <div class='row'>
-    <div class='col-xs-12'>
-      <div id="info-content"class='show-content active '>
-        <h3>ABOUT </h3>
-        <p class="description" value="text"> <%= @user.description %>
-        </p>
-        <h3>SKILLS</h3>
-        <div class="bubble-box">
-          <% @user.skills.each do |skill| %>
-            <div class="bubble">
-              <%= skill.name.titleize %>
-            </div>
-          <% end %>
-        </div>
-        <h3>INTERESTS</h3>
-        <div class="bubble-box">
-          <% @user.tags.each do |tag| %>
-            <div class="bubble">
-              <%= tag.name.titleize %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-      <div id="media-content" class="show-content">
-        <h3><%= @user.name.upcase %> IN ACTION...</h3>
-        <% @user.media.each do |medium| %>
-          <%= image_tag medium.path_url, class: "media-display" %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
 
-
-<div class='btn-container'>
-  <% if @connection.id.nil? %>
-    <%= form_for @connection do |f| %>
-    <div class="form-group">
-      <%= f.hidden_field :responder_id, value: @user.id %>
-    </div>
-      <%= f.submit " WITH #{@user.name.upcase}", class: 'btn-profile' %>
+  <div class='btn-container'>
+    <% if @connection.id.nil? %>
+      <%= form_for @connection do |f| %>
+      <div class="form-group">
+        <%= f.hidden_field :responder_id, value: @user.id %>
+      </div>
+        <%= f.submit " WITH #{@user.name.upcase}", class: 'button-profile' %>
+      <% end %>
+    <% else %>
+      <div class='button-profile'>
+        <%= link_to "CHAT WITH #{@user.name.upcase}", connection_path(@connection)%>
+      </div>
     <% end %>
-  <% else %>
-    <div class='btn-profile'>
-      <%= link_to "CHAT WITH #{@user.name.upcase}", connection_path(@connection)%>
-    </div>
-  <% end %>
-</div>
+  </div>
+
