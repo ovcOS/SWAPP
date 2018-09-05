@@ -32,7 +32,9 @@
                   <h4>We'll need a photo</h4>
                   <p>Just a few more things to offer you the best user experience</p>
                 </div>
-                <button class="button fas fa-check"></button>
+                <button class="button">
+                  <i class='fa fa-check'></i>
+                </button>
               </div>
             </div>
           </div>
@@ -56,7 +58,9 @@
                 </div>
                 <div class="get-started__form"><%= f.awesomplete_field(:skills, collection: @skill_names.join(','), placeholder:"#{@skill_names.sample}, #{@skill_names.sample}, ...", required: true) %>
                 </div>
-                <button class="button fas fa-check"></button>
+                <button class="button">
+                  <i class='fa fa-check'></i>
+                </button>
               </div>
             </div>
           </div>
@@ -79,7 +83,9 @@
                 </div>
                 <div class="get-started__form"><%= f.awesomplete_field(:tags, collection: @tag_names.join(','), placeholder:"#{@tag_names.sample}, #{@tag_names.sample}, ...", required: true)%>
                 </div>
-                <button class="button fas fa-check"></button>
+                <button class="button">
+                  <i class='fa fa-check'></i>
+                </button>
               </div>
             </div>
           </div>
@@ -103,7 +109,9 @@
                 <div class="get-started__form">
                     <%= f.text_field :description, placeholder: "Tell others about what you do..." %>
                 </div>
-                <button class="button fas fa-check"></button>
+                <button class="button">
+                  <i class='fa fa-check'></i>
+                </button>
               </div>
             </div>
           </div>
