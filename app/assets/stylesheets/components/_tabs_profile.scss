@@ -1,10 +1,10 @@
 .tabs {
-  height: 28px;
-  padding-left: 15px;
-  padding-right: 15px;
+  height: 50px;
+  // padding-left: 20px;
+  // padding-right: 20px;
   margin: auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-bottom: 0px;
 
 }
@@ -14,17 +14,20 @@
   font-family: $headers-font;
   font-size: $h4;
   color: $ocean-blue;
+  font-size: $h4;
+  border-radius: 3px;
+  background-color: white;
   border: none;
-  background-color: $ghost-white;
-  opacity: 0.9;
-  width: 165px;
+  width: 185px;
 }
 
 .btn-tabs {
-  color: $gunmetal;
+  color: white;
+  border: 2px solid white;
   font-family: $headers-font;
   font-size: $h4;
-  border: none;
-  background-color: $ghost-white;
-  width: 165px;
+  font-weight: $light;
+  background-color: transparent;
+  width: 185px;
+  border-radius: 3px;
 }

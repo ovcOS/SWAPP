@@ -2,14 +2,8 @@
   text-align: center;
   color: white;
 
-  h2 {
-    font-weight:lighter;
-    font-size: $h2;
-  }
-
   h5 {
     margin-top: 40px;
-    font-weight: $light;
     font-size: $h5;
   }
 
@@ -31,7 +25,7 @@
 }
 
 .form__background{
-  background-image: linear-gradient(150deg, #3023AE 0%, #C86DD7 100%);
+  background-image: linear-gradient(250deg, rgba(165, 67, 219, 100), rgba(73, 110, 225, 100));
   background-size: cover;
   min-height: 100vh;
 }
@@ -53,6 +47,8 @@
   padding: 6px 70px !important;
   color: white !important;
   font-weight: 350 !important;
+  font-family: $headers-font !important;
+  font-size: $p !important;
 }
 
 .form__wrap-input {
@@ -62,8 +58,9 @@
 
 .form__icon {
   position: absolute;
-  top: 10px;
-  left: 42px;
+  top: 8px;
+  left: 35px;
+  font-size: 18px;
 }
 
 .form__remember {
@@ -80,7 +77,7 @@
   flex-direction: column;
   justify-content: space-between;
   height: 50px;
-  margin-top: 15px;
+  margin: 15px 0px 25px 0px;
 }
 
 .form__links__body {

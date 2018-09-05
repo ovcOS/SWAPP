@@ -1,5 +1,11 @@
 .market {
   background: $ghost-white;
+
+  .col-xs-12 {
+    a:nth-last-child(1) .card {
+      margin-bottom: 80px;
+    }
+  }
 }
 
 .market__title {
