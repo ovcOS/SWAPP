@@ -78,3 +78,73 @@
     padding-top: 20px;
   }
 }
+
+.section.active {
+  opacity: 1;
+
+}
+
+.section {
+  opacity: 0;
+  transition: opacity 500ms linear;
+
+}
+
+  // .header {
+  //   padding-top: 88px;
+  //   padding-bottom: 35px;
+  // }
+
+  // .additional_info_form {
+  //   text-align: left;
+  // }
+
+  // .form_inputs {
+  //   padding-left: 22px;
+  // }
+
+   .fuck-off {
+     position:absolute;
+     top: -1000px;
+     display: none;
+   }
+
+  // .input_cont {
+  //   display: flex;
+  //   flex-direction: column;
+  //   width: 100%;
+
+  //   p {
+  //     margin: 0px;
+  //   }
+
+  //   input {
+  //     background: none;
+  //     font-size: $p;
+  //     font-weight: $light;
+  //     border: 0px;
+  //     &:first-child {
+  //       margin-bottom: 20px;
+  //     }
+  //     &::placeholder {
+  //       color: white;
+  //       font-size: $p;
+  //       font-weight: lighter;
+  //       opacity: 0.5;
+  //     }
+  //   }
+
+  //   ul > li {
+  //     color: black;
+  //   }
+
+  //   .awesomplete {
+  //     flex: 1;
+  //     width: 100%;
+  //   }
+  // }
+
+  // .info_form_button {
+  //   padding-top: 20px;
+  // }
+
