@@ -25,12 +25,12 @@ class UsersController < ApplicationController
     @user.description = params[:user][:description] if user_params[:description]
     if user_params[:skills]
       skill = Skill.find_by_name(user_params[:skills].strip.downcase.gsub(' ', '-'))
-      @user.skills << skill if skill
+      @user.skills << skill unless skill.nil? || @user.skills.include?(skill)
     end
 
     if user_params[:tags]
       tag = Tag.find_by_name(user_params[:tags].strip.downcase.gsub(' ', '_'))
-      @user.tags << tag if tag
+      @user.tags << tag unless tag.nil? || @user.tags.include?(tag)
     end
 
     if user_params[:profile_photo]
@@ -40,14 +40,14 @@ class UsersController < ApplicationController
     if params[:skills].present?
       params[:skills].split(',').each do |skill_name|
          skill = Skill.find_by_name(skill_name.strip.downcase.gsub(' ', '-'))
-         @user.skills << skill if skill
+         @user.skills << skill unless skill.nil? || @user.skills.include?(skill)
       end
     end
 
     if params[:tags].present?
       params[:tags].split(',').each do |tag_name|
         tag = Tag.find_by_name(tag_name.strip.downcase.gsub(' ', '_'))
-        @user.tags << tag if tag
+        @user.tags << tag unless tag.nil? || @user.tags.include?(tag)
       end
     end
     @user.location = "Barcelona, Spain"
