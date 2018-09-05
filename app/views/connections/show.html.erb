@@ -1,25 +1,37 @@
+<%= render 'shared/navbar' %>
+<div class="rounded_banner rounded_banner--small">
+  <div class="profile__header">
+    <div class="profile__header_avatar">
+      <% unless @user.profile_photo_url.nil? %>
+        <%= image_tag @user.profile_photo_url, class: 'avatar'  %>
+      <% end %>
+    </div>
+    <div class="profile__header_content">
+      <h3 class="profile__header_name"><%= @user.name.titleize %></h3>
+      <h4 class="profile__header_location"><%= @user.location %></h4>
+    </div>
+  </div>
+</div>
 <div class="container">
   <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
-      <div class="chat-header">
-        <% if current_user.id == @connection.requester.id %>
-          <h4><%= @connection.responder.name %></h4>
-        <% else %>
-          <h4><%= @connection.requester.name %></h4>
-        <% end %>
-      </div>
+    <div class="col-xs-12">
       <div class="messages">
         <% @connection.messages.each do |message| %>
           <%= render "messages/message", message: message, user_is_messages_author: message.user == current_user %>
-        <% end  %>
+        <% end %>
       </div>
-      <div id="create-message"></div>
-        <%= simple_form_for @message, remote: true do |f| %>
-          <%= f.hidden_field :connection_id, :value => @connection.id %>
-          <%= f.input :body, label: false  %>
-        <% end  %>
-      </div>
+    </div>
   </div>
+</div>
+<div id="create_message">
+  <%= simple_form_for @message, remote: true do |f| %>
+    <%= f.hidden_field :connection_id, :value => @connection.id %>
+    <%= f.input :body, label: false  %>
+    <%= f.label(:email) do %>
+      <%= image_tag "send.svg", id: "btn-send" %>
+      <%= f.submit %>
+    <% end %>
+  <% end %>
 </div>
 <% content_for :after_js do %>
   <script>
@@ -33,7 +45,6 @@
           if (messagesContainer) {
             scrollLastMessageIntoView();
           }
-
         }
     })
   </script>

@@ -1,11 +1,13 @@
 class ConnectionsController < ApplicationController
   include ActionView::Helpers::DateHelper
+
   def index
     @connections = current_user.all_connections
   end
 
   def show
     @connection = Connection.includes(messages: :user).find(params[:id])
+    @user = @connection.requester == current_user ? @connection.responder : @connection.requester
     @message = Message.new
   end
 

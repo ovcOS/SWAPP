@@ -17,4 +17,5 @@ import { slider } from "../components/slider.js"
 slider();
 import { fullPageSlide } from "../components/one_page_getting_started.js"
 fullPageSlide();
-import { handleFiles } from "../components/file_handler.js"
+import { handleFiles } from "../components/file_handler.js";
+
