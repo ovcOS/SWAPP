@@ -26,3 +26,17 @@
   overflow: hidden;
   background-image: linear-gradient(250deg, rgba(165, 67, 219, 100), rgba(73, 110, 225, 100));
 }
+
+.avatar__circle {
+  display: none;
+
+}
+
+.avatar__circle.active {
+  position: absolute;
+  top: 37px;
+  height: 100%;
+  width: 100%;
+  display: block;
+
+}

@@ -10,10 +10,11 @@ function fullPageSlide() {
     });
     //methods
     fullpage_api.setAllowScrolling(true);
-    let buttonsNext = document.querySelectorAll('.button.fas.fa-check');
-    for( let i = 0; buttonsNext.length < i; i++ ) {
+    var buttonsNext = document.querySelectorAll('.button.fas.fa-check');
+    for( let i = 0; buttonsNext.length > i; i++ ) {
       buttonsNext[i].addEventListener('click', (event) => {
-        fullpage_api.moveTo(i+1);
+        event.preventDefault();
+        fullpage_api.moveTo(i+2);
       })
     }
   }
