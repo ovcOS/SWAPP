@@ -1,7 +1,10 @@
-#messages {
-  max-height: 450px;
-  overflow-y: auto;
-  .avatar {
-    margin: 0.5rem;
-  }
+#create_message {
+  width: 90%;
+
+  margin-bottom: 28px;
+}
+
+.messages {
+  margin-top: 20px;
+  margin-bottom: 40px;
 }

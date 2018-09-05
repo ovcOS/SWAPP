@@ -1,4 +1,3 @@
-<div class="message <%= user_is_messages_author ? 'right' : '' %>">
-   <%= image_tag message.user.profile_photo_url, class: 'avatar' %>
-  <div class="message-content"> <%= message.body %></div>
+<div class="message <%= user_is_messages_author ? 'message--right message--gradient' : 'message message--left message--grey' %>">
+  <p><%= message.body %></p>
 </div>
