@@ -1,13 +1,25 @@
 <div id="fullpage">
   <%= form_for @user do |f| %>
-    <div class="slide text-center">
+    <div class="section text-center">
       <div class="get-started__wrapper">
         <div class="container">
           <div class="row">
             <div class="col-xs-12">
               <div class="get-started__content">
                 <label class="avatar avatar--gradient" for="user_profile_photo"><%= image_tag "default_profile.svg" %></label>
-                  <%= f.file_field :profile_photo, class:'fuck-off'%>
+                  <script>
+                    function handleFiles(files) {
+                      var avatars = document.querySelectorAll('.avatar')
+                      for (let i = 0; avatars.length > i; i++) {
+                        var img = document.createElement("img");
+                        img.src = window.URL.createObjectURL(files[0]);
+                        img.height = 160;
+                        avatars[i].innerHTML = "";
+                        avatars[i].appendChild(img);
+                      }
+                    }
+                  </script>
+                  <%= f.file_field :profile_photo, class:'fuck-off', onchange: 'handleFiles(this.files)'%>
                   <%= f.hidden_field :profile_photo_cache %>
                 <div class="get-started__one">
                   <h4>We'll need a photo</h4>
@@ -20,7 +32,7 @@
         </div>
       </div>
     </div>
-    <div class="slide text-center">
+    <div class="section text-center">
       <div class="get-started__wrapper">
         <div class="container">
           <div class="row">
@@ -40,7 +52,7 @@
         </div>
       </div>
     </div>
-    <div class="slide text-center">
+    <div class="section text-center">
       <div class="get-started__wrapper">
         <div class="container">
           <div class="row">
@@ -60,7 +72,7 @@
         </div>
       </div>
     </div>
-    <div class="slide text-center">
+    <div class="section text-center">
       <div class="get-started__wrapper">
         <div class="container">
           <div class="row">
@@ -83,7 +95,7 @@
         </div>
       </div>
     </div>
-    <div class="slide text-center">
+    <div class="section text-center">
       <div class="get-started__final-wrapper">
         <div class="container">
           <div class="row">
