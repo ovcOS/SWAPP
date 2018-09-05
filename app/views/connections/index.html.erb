@@ -23,9 +23,9 @@
                   <%= image_tag(user.profile_photo_url, class:'avatar avatar--sm') %>
                 </div>
                 <div class="chat__info">
-                  <h5><%= user.name.titleize %></h5>
+                  <h4><%= user.name.titleize %></h4>
                   <div class='chat__small_text'>
-                    <h6><%= connection.messages.empty? ? 'Sent them a message!' : "#{time_ago_in_words(connection.messages.last.created_at)} ago" %></h6>
+                    <h5><%= connection.messages.empty? ? 'Send a message!' : "#{time_ago_in_words(connection.messages.last.created_at)} ago" %></h5>
                   </div>
                 </div>
               <% end %>
@@ -33,6 +33,7 @@
                 <i class="fas fa-times"></i>
               <% end %>
             </div>
+            <div class="chats__divider"></div>
           <% end %>
         </div>
       <% end %>
