@@ -5,7 +5,7 @@
         <div id="form">
           <div class="form__brand">
             <%= image_tag "logo.svg", class: "logo-padding_tiny" %>
-            <h2>Join the <strong>SkillShare</strong> Community</h2>
+            <h2>Join the <strong>SWAPP</strong> Community</h2>
           </div>
 
           <%= minimal_form_for(resource, as: resource_name, url: registration_path(resource_name), :defaults => { :input_html => { :class => "form__input" } }) do |f| %>
@@ -45,7 +45,7 @@
             </div>
           <% end %>
 
-          <span><h5>Already have an account?</h5></span>
+          <h5>Already have an account?</h5>
           <%= render "devise/shared/links" %>
         </div>
       </div>
