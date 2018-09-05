@@ -52,7 +52,11 @@ class UsersController < ApplicationController
     end
     @user.location = "Barcelona, Spain"
     @user.save!
-    redirect_to profile_path
+    if  request.referrer.include?'getting_started'
+      redirect_to users_path
+    else
+      redirect_to profile_path
+    end
   end
 
   def getting_started
