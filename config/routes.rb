@@ -9,4 +9,5 @@ Rails.application.routes.draw do
 
   get 'getting_started', to: 'users#getting_started', as: 'getting_started'
   get 'profile', to: 'pages#profile', as: 'profile'
+  mount ActionCable.server => "/cable"
 end
