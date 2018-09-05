@@ -76,7 +76,6 @@
     border: none;
     border-bottom: $light-gray;
     width: 280px;
-
   }
 
   &::placeholder {
@@ -147,13 +146,11 @@
 
 .section.active {
   opacity: 1;
-
 }
 
 .section {
   opacity: 0;
   transition: opacity 500ms linear;
-
 }
   // .header {
   //   padding-top: 88px;
