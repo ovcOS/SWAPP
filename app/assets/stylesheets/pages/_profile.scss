@@ -73,6 +73,10 @@
   margin-top: 25px;
 }
 
+.last_profile_card {
+  margin-bottom: 300px;
+}
+
 .media-title {
   margin-top: 25px;
     h3 {
@@ -88,3 +92,10 @@
 }
 
 
+#sticky_button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  overflow: scroll;
+}

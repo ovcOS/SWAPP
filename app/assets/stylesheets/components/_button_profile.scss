@@ -1,7 +1,6 @@
 
+
 .button-profile {
-  margin-bottom: 60px;
-  position: sticky;
   background-image: linear-gradient(to right, #A543DB 0%, #496EE1 100%);
   box-sizing: border-box;
   color: white;
@@ -9,10 +8,7 @@
   height: 72px;
   letter-spacing: 1px;
   padding: 4px;
-  position: relative;
   text-decoration: none;
-  width: 98vw;
-  margin-bottom: 71.5px;
    a {
       display: flex;
       align-items: center;
@@ -23,6 +19,20 @@
       color: $rich-lilac;
       font-family: $headers-font;
       font-size: $h5;
+   }
+
+   input {
+      display: flex;
+      align-items: center;
+      background: white !important;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      color: $rich-lilac;
+      font-family: $headers-font;
+      font-size: $h5;
+      box-shadow: none !important;
+      border: none !important;
    }
 }
 

@@ -1,3 +1,3 @@
 <div class="message <%= user_is_messages_author ? 'message--right message--gradient' : 'message message--left message--grey' %>">
-  <p><%= message.body %></p>
+  <p><%= simple_format(message.body) %></p>
 </div>
