@@ -20,7 +20,7 @@
             <p>Sorry, no users with these skills found</p>
           </div>
         <% end %>
-        <% @users.each do |user| %>
+        <% @users.first(20).each do |user| %>
           <%= link_to user_path(user) do %>
             <div class="card">
               <%= image_tag(user.profile_photo_url, class: "card__profile-photo") %>
