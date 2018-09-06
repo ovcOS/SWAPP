@@ -22,8 +22,8 @@ class User < ApplicationRecord
     where(id: ids).order(order)
   }
 
-  scope :search_by_fuzzy_skill, ->(skill) {
-    User.joins(:skills).where("skills.name ILIKE \'%#{skill}%\'")
+  scope :search_by_fuzzy_skill, ->(skill, current_user) {
+    User.joins(:skills).where("skills.name ILIKE \'%#{skill}%\'").where.not(id: current_user.id)
   }
 
   def self.best_matches(user)
