@@ -3,7 +3,7 @@
 .message {
   min-height: 61px;
   min-width: 234px;
-  padding: 14px 8px 14px 16px;
+  padding: 14px 8px 3px 16px;
   margin-bottom: 15px;
   text-align: left;
   line-height: 26px;
@@ -20,6 +20,10 @@
     letter-spacing: 0.5px;
   }
 
+}
+
+.message__timestamp {
+  text-align: right;
 }
 
 .message--right {
