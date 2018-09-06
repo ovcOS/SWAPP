@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def index
     @user = current_user
     if params[:query].present?
-      @users = User.search_by_fuzzy_skill(params[:query])
+      @users = User.search_by_fuzzy_skill(params[:query], current_user)
     else
       @users = User.best_matches(current_user)
     end
