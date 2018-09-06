@@ -10,7 +10,7 @@ function fullPageSlide() {
     });
     //methods
     fullpage_api.setAllowScrolling(true);
-    var buttonsNext = document.querySelectorAll('.button.fas.fa-check');
+    var buttonsNext = document.querySelectorAll('.button');
     for( let i = 0; buttonsNext.length > i; i++ ) {
       buttonsNext[i].addEventListener('click', (event) => {
         event.preventDefault();
