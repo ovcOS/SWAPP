@@ -2,10 +2,7 @@ var messagesContainer = document.querySelector(".messages");
 messagesContainer.insertAdjacentHTML( "beforeend", '<%= j render "message", message: @message, user_is_messages_author: true %>' )
 var input = document.querySelector("#message_body")
 input.value = ''
-input.blur();
-setTimeout(function() {
-    input.focus()
-}, 7);
+input.focus()
 var chatBox = document.getElementsByClassName('chat_text_box')[0];
 var textArea = chatBox.getElementsByTagName('textarea')[0];
 textArea.setAttribute('style','');
