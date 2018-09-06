@@ -8,9 +8,10 @@
               <div class="get-started__content">
                 <label class="avatar avatar--gradient" for="user_profile_photo"><%= image_tag "default_profile.svg" %></label>
                   <div class="avatar__circle">
+                    <label for="user_profile_photo">
                     <%= image_tag "profile_circle.svg" %>
+                    </label>
                   </div>
-
                   <script>
                     function handleFiles(files) {
                       var circles = document.querySelectorAll('.avatar__circle');
