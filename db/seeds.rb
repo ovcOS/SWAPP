@@ -93,7 +93,7 @@ pictures = {
     "https://images.pexels.com/photos/354972/pexels-photo-354972.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350",
     "https://images.pexels.com/photos/789822/pexels-photo-789822.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350",
     "https://images.pexels.com/photos/950243/pexels-photo-950243.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350",
-    "https://images.pexels.com/photos/371160/pexels-photo-371160.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350"
+    "https://images.pexels.com/photos/371160/pexels-photo-371160.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350",
     "https://images.pexels.com/photos/790744/pexels-photo-790744.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350",
     "https://images.pexels.com/photos/918457/pexels-photo-918457.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350",
     "https://images.pexels.com/photos/731070/pexels-photo-731070.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350",
