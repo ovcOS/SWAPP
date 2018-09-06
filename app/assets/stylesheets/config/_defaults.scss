@@ -52,9 +52,10 @@ a {
 
 .fixed-above-navbar {
   position: fixed;
-  right: 0;
-  bottom: 54px;
-  left: 0;
+  position: center;
+  // right: 50vw;
+  bottom: 70px;
+  left: 71%;
 }
 
 button:focus {
