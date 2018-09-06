@@ -7,31 +7,6 @@
   margin-bottom: 40px;
 }
 
-.chat_text_box {
-  width: 100%;
-  padding-left: 20px;
-  padding-right: 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  .message_body {
-    margin-bottom: 0px;
-    width: 100%;
-
-    textarea {
-      box-shadow: none;
-      border: 0px;
-      padding: 0px;
-      font-size: $p;
-      resize: none;
-    }
-  }
-
-  #btn-send {
-
-    .send-svg {
-      fill:#AB7C94;
-    }
-  }
+.day_stamp {
+  text-align: center;
 }
