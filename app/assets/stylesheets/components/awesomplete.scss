@@ -1,0 +1,22 @@
+.awesomplete mark {
+  background: none !important;
+}
+
+.awesomplete li:hover mark {
+  background: none !important;
+}
+
+.awesomplete li[aria-selected="true"] mark {
+  background: none !important;
+  color: inherit;
+}
+
+.awesomplete > ul > li:hover {
+    background: none !important;
+    color: black;
+}
+
+  .awesomplete > ul > li[aria-selected="true"] {
+    background: $ocean-blue !important;
+    color: white;
+  }
