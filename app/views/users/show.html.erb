@@ -91,13 +91,26 @@
     <div class="form-group">
      <%= f.hidden_field :responder_id, value: @user.id %>
     </div>
-    <div class='button-profile fixed-above-navbar'>
-      <%= f.submit "CHAT WITH #{@user.name.upcase}"%>
-    </div>
-  <% end %>
+      <div class='fixed-above-navbar circle-button'>
+        <label class="button_clickable">
+          <div class="button_background">
+            <%= f.submit '', class: 'fuck-off' %>
+          </div>
+          <div class="button_foreground">
+            <%= image_tag "chats.svg" %>
+          </div>
+        </label>
+      </div>
+    <% end %>
 <% else %>
-  <div class='button-profile fixed-above-navbar'>
-    <%= link_to "CHAT WITH #{@user.name.upcase}", connection_path(@connection)%>
-  </div>
+    <div class='circle-button fixed-above-navbar'>
+      <%= link_to connection_path(@connection) do %>
+        <div class="button_background">
+        </div>
+        <div class="button_foreground">
+          <%= image_tag "chats.svg" %>
+        </div>
+      <% end %>
+    </div>
 <% end %>
 
