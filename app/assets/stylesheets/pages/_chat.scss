@@ -1,5 +1,4 @@
 #create_message {
-  margin-bottom: 48px;
 }
 
 .messages {
@@ -9,4 +8,9 @@
 
 .day_stamp {
   text-align: center;
+}
+
+.chat_text_box {
+  position: fixed;
+  bottom: 70px;
 }
