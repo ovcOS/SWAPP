@@ -2,8 +2,10 @@
 <div class="rounded_banner rounded_banner--small">
   <div class="profile__header">
     <div class="profile__header_avatar">
-      <% unless @user.profile_photo_url.nil? %>
-        <%= image_tag @user.profile_photo_url, class: 'avatar'  %>
+      <%= link_to user_path(@user) do %>
+        <% unless @user.profile_photo_url.nil? %>
+          <%= image_tag @user.profile_photo_url, class: 'avatar'  %>
+        <% end %>
       <% end %>
     </div>
     <div class="profile__header_content">
