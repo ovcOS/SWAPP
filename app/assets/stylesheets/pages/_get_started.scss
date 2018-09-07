@@ -97,18 +97,20 @@
   background: linear-gradient(250deg, rgba(165, 67, 219, 100), rgba(73, 110, 225, 100));
   color: white;
 }
+.checkmark-container {
+  margin-bottom: 90px;
+}
 
 .checkmark--parent {
-  position: relative;
-  margin-bottom: 90px;
-  top: 0px;
-  right: 25%;
+  position: absolute;
+  left: 50%;
   z-index: 0;
 }
 
 .checkmark--outer {
   z-index: 1;
-  position: absolute;
+  position: relative;
+  left: -50%;
   opacity: 0.1;
   background: $ghost-white;
   width: 150px;
@@ -120,7 +122,7 @@
   z-index: 2;
   position: absolute;
   top: 15px;
-  left: 15px;
+  left: -40%;
   opacity: 0.1;
   background: $ghost-white;
   width: 120px;
@@ -132,7 +134,7 @@
   z-index: 3;
   position: absolute;
   top: 30px;
-  left: 30px;
+  left: -30%;
   background: $ghost-white;
   width: 90px;
   height: 90px;
