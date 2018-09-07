@@ -79,7 +79,7 @@
                   <%= image_tag "profile_circle.svg" %>
                 </div>
                 <div class="get-started__two">
-                    <h4>What are your interested in?</h4>
+                    <h4>What are you interested in?</h4>
                     <p>Tell others what you are interested in learning</p>
                 </div>
                 <div class="get-started__form"><%= f.awesomplete_field(:tags, collection: @tag_names.join(','), placeholder:"#{@tag_names.sample}, #{@tag_names.sample}, ...", required: true)%>
