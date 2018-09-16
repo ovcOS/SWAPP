@@ -1,10 +1,12 @@
 .info_card {
   background-color: white;
   font-size: $h3;
-  box-shadow: .2px .2px .2px;
+  box-shadow: 2px 2px 2px lightgray;
   min-height: 150px;
   min-width: 280px;
   border-radius: 3px;
+  border-left: .5px solid lightgray;
+  border-top: .5px solid lightgray;
 
   p {
     margin: 0px;
